@@ -1,2 +1,3 @@
 add_subdirectory(libhawaii)
 add_subdirectory(libhawaiishell)
+add_subdirectory(declarative)

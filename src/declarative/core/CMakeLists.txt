@@ -1,6 +1,7 @@
 project(declarativecore)
 
 include_directories(
+    ${CMAKE_BINARY_DIR}/src/libhawaii
     ${CMAKE_BINARY_DIR}/src/libhawaiishell
 )
 

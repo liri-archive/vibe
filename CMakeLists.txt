@@ -61,6 +61,9 @@ endif()
 # Find Qt5
 find_package(Qt5 5.0 REQUIRED COMPONENTS Core Gui Qml Quick)
 
+# Find QtConfiguration
+find_package(QtConfiguration REQUIRED)
+
 # Subdirectories
 add_subdirectory(src)
 

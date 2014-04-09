@@ -26,12 +26,15 @@
 
 #include <QtQml/QQmlExtensionPlugin>
 #include <QtQml/QQmlComponent>
+#include <QtQml/QQmlEngine>
+#include <QtQml/QJSEngine>
 
 #include <hawaiishell/containmentitem.h>
 #include <hawaiishell/elementitem.h>
 
 #include "packagesmodelitem.h"
 #include "packagesmodel.h"
+#include "qmldataprovider.h"
 
 using namespace Hawaii;
 
@@ -53,6 +56,8 @@ void HawaiiShellCorePlugin::registerTypes(const char *uri)
     qmlRegisterUncreatableType<PackagesModelItem>(uri, 1, 0, "PackagesModelItem",
                                                   QStringLiteral("Do not create PackagesModelItem"));
     qmlRegisterType<PackagesModel>(uri, 1, 0, "PackagesModel");
+    qmlRegisterType<QmlDataProvider>(uri, 1, 0, "DataProvider");
+    qmlRegisterType<QQmlPropertyMap>();
 }
 
 #include "plugin.moc"

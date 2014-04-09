@@ -2,6 +2,9 @@ project(libhawaii)
 
 set(SOURCES
     appinfo.cpp
+    dataprovider.cpp
+    dataprovidermanager.cpp
+    datasource.cpp
     package.cpp
     packages_p.cpp
     packagestructure.cpp
@@ -31,6 +34,9 @@ set_target_properties(hawaii PROPERTIES
 ecm_generate_headers(HEADERS
     HEADER_NAMES
         AppInfo
+        DataProvider
+        DataProviderManager
+        DataSource
         Package
         PackageStructure
         PluginLoader

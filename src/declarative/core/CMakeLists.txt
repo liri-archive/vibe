@@ -9,6 +9,7 @@ set(SOURCES
     plugin.cpp
     packagesmodel.cpp
     packagesmodelitem.cpp
+    qmldataprovider.cpp
 )
 
 set(FILES

@@ -389,7 +389,7 @@ void ElementItem::initialize()
         qWarning("  ** %s", qPrintable(errorMsg));
 
         // Load the element error component from mantle's package
-        url = QUrl::fromLocalFile(d->element->containment()->mantle()->package().filePath("elementerror"));
+        url = QUrl::fromLocalFile(d->element->containment()->mantle()->shellPackage().filePath("elementerror"));
         d->qmlObject->setSource(url);
         d->qmlObject->completeInitialization();
 

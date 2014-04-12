@@ -65,23 +65,16 @@ QString Mantle::shell() const
     return d->shell;
 }
 
+Package Mantle::shellPackage() const
+{
+    Q_D(const Mantle);
+    return d->shellPackage;
+}
+
 QString Mantle::lookAndFeel() const
 {
     Q_D(const Mantle);
     return d->lookAndFeel;
-}
-
-Package Mantle::package() const
-{
-    Q_D(const Mantle);
-    return d->package;
-}
-
-void Mantle::setPackage(const Package &package)
-{
-    Q_D(Mantle);
-    d->package = package;
-    Q_EMIT packageChanged(package);
 }
 
 Package Mantle::lookAndFeelPackage() const
@@ -90,13 +83,21 @@ Package Mantle::lookAndFeelPackage() const
     return d->lookAndFeelPackage;
 }
 
-void Mantle::setShell(const QString &shell)
+void Mantle::setShell(const QString &name)
 {
     Q_D(Mantle);
-    if (d->shell != shell) {
-        d->shell = shell;
+
+    if (d->shell != name) {
+        d->shell = name;
         Q_EMIT shellChanged(d->shell);
     }
+}
+
+void Mantle::setShellPackage(const Package &package)
+{
+    Q_D(Mantle);
+    d->shellPackage = package;
+    Q_EMIT shellPackageChanged(package);
 }
 
 void Mantle::setLookAndFeel(const QString &name)

@@ -234,7 +234,7 @@ void ContainmentItem::initialize()
         qWarning("  ** %s", qPrintable(errorMsg));
 
         // Load the element error component from mantle's package
-        url = d->containment->mantle()->package().filePath("elementerror");
+        url = d->containment->mantle()->shellPackage().filePath("elementerror");
         d->qmlObject->setSource(QUrl::fromLocalFile(url));
         d->qmlObject->completeInitialization();
 

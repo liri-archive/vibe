@@ -49,23 +49,21 @@ public:
     QQmlEngine *engine() const;
 
     QString shell() const;
+    Package shellPackage() const;
 
     QString lookAndFeel() const;
-
-    Package package() const;
-    void setPackage(const Package &package);
-
     Package lookAndFeelPackage() const;
 
 Q_SIGNALS:
     void shellChanged(const QString &shell);
-    void packageChanged(const Package &package);
+    void shellPackageChanged(const Package &package);
 
     void lookAndFeelChanged(const QString &name);
     void lookAndFeelPackageChanged(const Package &package);
 
 protected:
-    void setShell(const QString &shell);
+    void setShell(const QString &name);
+    void setShellPackage(const Package &package);
 
     void setLookAndFeel(const QString &name);
     void setLookAndFeelPackage(const Package &package);

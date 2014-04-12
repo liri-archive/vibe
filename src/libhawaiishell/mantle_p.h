@@ -39,7 +39,7 @@ public:
     QQmlEngine *engine;
 
     QString shell;
-    Package package;
+    Package shellPackage;
 
     QString lookAndFeel;
     Package lookAndFeelPackage;

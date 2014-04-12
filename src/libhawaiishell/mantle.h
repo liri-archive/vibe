@@ -41,6 +41,7 @@ class HAWAIISHELL_EXPORT Mantle : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString shell READ shell NOTIFY shellChanged)
+    Q_PROPERTY(QString lookAndFeel READ lookAndFeel NOTIFY lookAndFeelChanged)
 public:
     explicit Mantle(QObject *parent = 0);
     ~Mantle();
@@ -49,15 +50,25 @@ public:
 
     QString shell() const;
 
+    QString lookAndFeel() const;
+
     Package package() const;
     void setPackage(const Package &package);
+
+    Package lookAndFeelPackage() const;
 
 Q_SIGNALS:
     void shellChanged(const QString &shell);
     void packageChanged(const Package &package);
 
+    void lookAndFeelChanged(const QString &name);
+    void lookAndFeelPackageChanged(const Package &package);
+
 protected:
     void setShell(const QString &shell);
+
+    void setLookAndFeel(const QString &name);
+    void setLookAndFeelPackage(const Package &package);
 
 private:
     Q_DECLARE_PRIVATE(Mantle)

@@ -37,8 +37,12 @@ public:
     MantlePrivate(Mantle *parent);
 
     QQmlEngine *engine;
+
     QString shell;
     Package package;
+
+    QString lookAndFeel;
+    Package lookAndFeelPackage;
 
 protected:
     Q_DECLARE_PUBLIC(Mantle)

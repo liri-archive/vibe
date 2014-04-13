@@ -74,10 +74,6 @@ void QuickViewPrivate::initialize()
     // Create platform window
     q->create();
 
-    // Emit a signal when the screen geometry is changed
-    q->connect(q->screen(), &QScreen::geometryChanged,
-               q, &QuickView::screenGeometryChanged);
-
     // View is sized by the root object
     q->setResizeMode(QQuickView::SizeViewToRootObject);
 }
@@ -239,11 +235,6 @@ void QuickView::setConfiguring(bool value)
 
     if (isConfiguring() != value)
         d->containment.data()->setConfiguring(value);
-}
-
-QRectF QuickView::screenGeometry() const
-{
-    return screen()->geometry();
 }
 
 void QuickView::showConfigurationWindow()

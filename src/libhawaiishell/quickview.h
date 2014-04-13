@@ -44,7 +44,6 @@ class HAWAIISHELL_EXPORT QuickView : public QQuickView
     Q_PROPERTY(Hawaii::Types::Location location READ location WRITE setLocation NOTIFY locationChanged)
     Q_PROPERTY(bool immutable READ isImmutable WRITE setImmutable NOTIFY immutableChanged)
     Q_PROPERTY(bool configuring READ isConfiguring WRITE setConfiguring NOTIFY configuringChanged)
-    Q_PROPERTY(QRectF screenGeometry READ screenGeometry NOTIFY screenGeometryChanged)
 public:
     /*!
      * Constructor.
@@ -125,11 +124,6 @@ public:
      */
     void setConfiguring(bool value);
 
-    /*!
-     * \return the geometry of the screen where this view is located.
-     */
-    QRectF screenGeometry() const;
-
 protected:
     /*!
      * Shows the configuration window for this view.
@@ -175,12 +169,6 @@ Q_SIGNALS:
      * \param newValue whether the view is now in configuration mode or not.
      */
     void configuringChanged(bool newValue);
-
-    /*!
-     * Emitted when the screen geometry is changed.
-     * \param geometry the new screen geometry
-     */
-    void screenGeometryChanged(const QRect &geometry);
 
 private:
     Q_DECLARE_PRIVATE(QuickView)

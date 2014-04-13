@@ -49,6 +49,7 @@ class ContainmentPrivate
 public:
     ContainmentPrivate();
 
+    uint containmentId;
     QConfiguration *configuration;
     Mantle *mantle;
     Types::ContainmentType type;
@@ -58,7 +59,11 @@ public:
     bool configuring;
     Package package;
     QList<Element *> elements;
+
+    static uint s_maxContainmentId;
 };
+
+uint ContainmentPrivate::s_maxContainmentId = 0;
 
 ContainmentPrivate::ContainmentPrivate()
     : mantle(nullptr)
@@ -68,6 +73,7 @@ ContainmentPrivate::ContainmentPrivate()
     , immutable(false)
     , configuring(false)
 {
+    containmentId = ++s_maxContainmentId;
 }
 
 /*
@@ -92,6 +98,12 @@ Containment::Containment(Mantle *mantle, QObject *parent)
 Containment::~Containment()
 {
     delete d_ptr;
+}
+
+uint Containment::id() const
+{
+    Q_D(const Containment);
+    return d->containmentId;
 }
 
 Mantle *Containment::mantle() const

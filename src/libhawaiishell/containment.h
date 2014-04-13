@@ -50,6 +50,13 @@ public:
     ~Containment();
 
     /*!
+     * Returns the containment identifier which is a number
+     * unique to the session but it may change between restarts.
+     * \return identifier.
+     */
+    uint id() const;
+
+    /*!
      * \return the mantle for this containment.
      */
     Mantle *mantle() const;

@@ -1,7 +1,6 @@
 project(libhawaiishell)
 
 include_directories(
-    ${QtConfiguration_INCLUDE_DIRS}
     ${CMAKE_BINARY_DIR}/src/libhawaii
 )
 
@@ -31,7 +30,6 @@ qt5_use_modules(hawaiishell Qml Quick)
 target_include_directories(hawaiishell INTERFACE ${INCLUDE_INSTALL_DIR})
 target_link_libraries(hawaiishell
     hawaii
-    ${QtConfiguration_LIBRARIES}
 )
 set_target_properties(hawaiishell PROPERTIES
     VERSION ${LIBHAWAII_VERSION_STRING}

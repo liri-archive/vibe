@@ -30,8 +30,6 @@
 #include <QtQml/QQmlContext>
 #include <QtQuick/QQuickItem>
 
-#include <QtConfiguration/QConfiguration>
-
 #include <hawaii/package.h>
 #include <hawaii/pluginloader.h>
 
@@ -50,7 +48,6 @@ public:
     ContainmentPrivate();
 
     uint containmentId;
-    QConfiguration *configuration;
     Mantle *mantle;
     Types::ContainmentType type;
     Types::FormFactor formFactor;
@@ -86,13 +83,6 @@ Containment::Containment(Mantle *mantle, QObject *parent)
 {
     Q_D(Containment);
     d->mantle = mantle;
-
-    // Save and load settings
-    static int containmentId = 0;
-    const QString section = QString("shell/%1/containments/containment%2")
-            .arg(mantle->shell())
-            .arg(QString::number(containmentId++));
-    d->configuration = new QConfiguration(this, section, this);
 }
 
 Containment::~Containment()

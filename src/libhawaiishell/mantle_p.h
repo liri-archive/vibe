@@ -41,9 +41,6 @@ public:
     QString shell;
     Package shellPackage;
 
-    QString lookAndFeel;
-    Package lookAndFeelPackage;
-
 protected:
     Q_DECLARE_PUBLIC(Mantle)
     Mantle *q_ptr;

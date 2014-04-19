@@ -44,8 +44,7 @@ public:
         BackgroundPackage,
         ElementPackage,
         ContainmentPackage,
-        ShellPackage,
-        LookAndFeelPackage
+        ShellPackage
     };
 
     enum Roles {

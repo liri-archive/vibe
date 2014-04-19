@@ -71,18 +71,6 @@ Package Mantle::shellPackage() const
     return d->shellPackage;
 }
 
-QString Mantle::lookAndFeel() const
-{
-    Q_D(const Mantle);
-    return d->lookAndFeel;
-}
-
-Package Mantle::lookAndFeelPackage() const
-{
-    Q_D(const Mantle);
-    return d->lookAndFeelPackage;
-}
-
 void Mantle::setShell(const QString &name)
 {
     Q_D(Mantle);
@@ -98,23 +86,6 @@ void Mantle::setShellPackage(const Package &package)
     Q_D(Mantle);
     d->shellPackage = package;
     Q_EMIT shellPackageChanged(package);
-}
-
-void Mantle::setLookAndFeel(const QString &name)
-{
-    Q_D(Mantle);
-
-    if (d->lookAndFeel != name) {
-        d->lookAndFeel = name;
-        Q_EMIT lookAndFeelChanged(d->lookAndFeel);
-    }
-}
-
-void Mantle::setLookAndFeelPackage(const Package &package)
-{
-    Q_D(Mantle);
-    d->lookAndFeelPackage = package;
-    Q_EMIT lookAndFeelPackageChanged(package);
 }
 
 } // namespace Hawaii

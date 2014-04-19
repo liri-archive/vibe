@@ -80,9 +80,6 @@ void PackagesModelPrivate::populate()
     case PackagesModel::ShellPackage:
         pluginType = PluginLoader::ShellPlugin;
         break;
-    case PackagesModel::LookAndFeelPackage:
-        pluginType = PluginLoader::LookAndFeelPlugin;
-        break;
     default:
         return;
     }

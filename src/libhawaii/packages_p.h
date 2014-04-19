@@ -70,12 +70,6 @@ public:
     void initializePackage(Package *package);
 };
 
-class LookAndFeelPackage : public BasePackage
-{
-public:
-    void initializePackage(Package *package);
-};
-
 class PreferencesPackage : public MainScriptPackage
 {
 public:

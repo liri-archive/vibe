@@ -120,21 +120,6 @@ void ShellPackage::initializePackage(Package *package)
     // Elements
     package->addFileDefinition("elementerror", QStringLiteral("element/ElementError.qml"),
                                tr("Error message for elements that fail to load"));
-}
-
-void LookAndFeelPackage::initializePackage(Package *package)
-{
-    package->setDefaultPackageRoot(QStringLiteral("hawaii/lookandfeel/"));
-
-    // Previews
-    package->addDirectoryDefinition("previews", QStringLiteral("previews"),
-                                    tr("Preview images"));
-    package->addFileDefinition("overlaypreview", QStringLiteral("previews/overlay.png"),
-                               tr("Preview for the overlay"));
-    package->addFileDefinition("authenticationpreview", QStringLiteral("previews/authentication.png"),
-                               tr("Preview for the authentication user interface"));
-    package->addFileDefinition("lockscreenpreview", QStringLiteral("previews/lockscreen.png"),
-                               tr("Preview for the Lock Screen"));
 
     // Overlay
     package->addDirectoryDefinition("overlayui", QStringLiteral("overlay"),

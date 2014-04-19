@@ -92,9 +92,6 @@ Package PluginLoader::loadPackage(PluginType type)
     case ShellPlugin:
         structure = new ShellPackage();
         break;
-    case LookAndFeelPlugin:
-        structure = new LookAndFeelPackage();
-        break;
     case PreferencesPlugin:
         structure = new PreferencesPackage();
         break;

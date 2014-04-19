@@ -38,11 +38,10 @@ class HAWAII_EXPORT PluginLoader
 public:
     enum PluginType {
         BackgroundPlugin = 0,
-        ElementPlugin = 1,
-        ContainmentPlugin = 2,
-        ShellPlugin = 3,
-        LookAndFeelPlugin = 4,
-        PreferencesPlugin = 5,
+        ElementPlugin,
+        ContainmentPlugin,
+        ShellPlugin,
+        PreferencesPlugin,
         CustomPlugin = 0x0100
     };
 

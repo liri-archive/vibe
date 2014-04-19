@@ -129,10 +129,18 @@ void LookAndFeelPackage::initializePackage(Package *package)
     // Previews
     package->addDirectoryDefinition("previews", QStringLiteral("previews"),
                                     tr("Preview images"));
+    package->addFileDefinition("overlaypreview", QStringLiteral("previews/overlay.png"),
+                               tr("Preview for the overlay"));
     package->addFileDefinition("authenticationpreview", QStringLiteral("previews/authentication.png"),
                                tr("Preview for the authentication user interface"));
     package->addFileDefinition("lockscreenpreview", QStringLiteral("previews/lockscreen.png"),
                                tr("Preview for the Lock Screen"));
+
+    // Overlay
+    package->addDirectoryDefinition("overlayui", QStringLiteral("overlay"),
+                                    tr("Overlay user interface"));
+    package->addFileDefinition("overlay", QStringLiteral("overlay/Overlay.qml"),
+                               tr("Overlay user interface file"));
 
     // Authentication
     package->addDirectoryDefinition("authenticationui", QStringLiteral("authentication"),

@@ -143,9 +143,7 @@ void DataProviderManager::unloadProvider(const QString &name)
     // it when the nobody is using it anymore
     if (d->providers.contains(name)) {
         DataProvider *provider = d->providers.value(name);
-        provider->d_ptr->refCount.deref();
-
-        if (provider->d_ptr->refCount == 0) {
+        if (!provider->d_ptr->refCount.deref()) {
             d->providers.remove(name);
             delete provider;
         }

@@ -63,6 +63,7 @@ set(REQUIRED_QT_VERSION 5.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Core Gui Qml Quick)
 
 # Subdirectories
+add_subdirectory(declarative)
 add_subdirectory(src)
 
 # Display featute summary

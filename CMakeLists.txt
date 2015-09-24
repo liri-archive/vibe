@@ -2,6 +2,11 @@ project(HawaiiLibraries)
 
 cmake_minimum_required(VERSION 2.8.12)
 
+# Silence CMake warnings
+if(POLICY CMP0063)
+    cmake_policy(SET CMP0063 NEW)
+endif()
+
 # Set version
 set(PROJECT_VERSION "0.3.0")
 set(PROJECT_VERSION_MAJOR 0)
@@ -45,13 +50,20 @@ include(KDEInstallDirs)
 include(KDECompilerSettings)
 include(KDECMakeSettings)
 
+# Find pkg-config here so that it can be referenced soon
+find_package(PkgConfig)
+
+# gio (for the GSettings Qt wrapper)
+pkg_check_modules(gio gio-2.0 REQUIRED)
+
 # Find Qt5
 set(REQUIRED_QT_VERSION "5.4.0")
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED COMPONENTS Core Gui Qml Quick)
 
 # Subdirectories
-#add_subdirectory(declarative)
+add_subdirectory(declarative)
 add_subdirectory(src)
+add_subdirectory(tests)
 
 # Display featute summary
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

@@ -1,2 +1,1 @@
-add_subdirectory(core)
-add_subdirectory(applications)
+add_subdirectory(settings)

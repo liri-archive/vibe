@@ -2,23 +2,7 @@ language: cpp
 
 compiler:
   - gcc
-  - clang
-
-env:
-  global:
-   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
-   #   via the "travis encrypt" command using the project repo's public key
-   - secure: "ACWDq/vepvntxIQyyon/emc2fXCPYZhpCFkQ/cWmVJ+hS6eGEBl5sEoyXZicPmZNxcdGyhGCprtcoMGwqfR31B0MSD5O0GVWrS+NNN5imH+Fqvyf2KcG+ByJSOLmeyn9UzrByS41hw2A8AfzwQg50sQjPHY27LmJNZsXizLTGt0="
-
-addons:
-  coverity_scan:
-    project:
-      name: "hawaii-desktop/qtaccountsservice"
-      description: "Build submitted via Travis CI"
-    notification_email: pierluigi.fiorini@gmail.com
-    build_command_prepend: "rm -fr build && mkdir build && cd build && cmake .."
-    build_command: "make -j 4"
-    branch_pattern: coverity_scan
+#  - clang
 
 notifications:
   email: false
@@ -44,6 +28,8 @@ install:
   #- if [ "$CXX" == "clang++" ]; then export CC="clang-3.6"; export CXX="clang++-3.6"; fi
   # qt
   - sudo apt-get -y install qt55declarative qt55tools
+  # glib
+  - sudo apt-get -y install libglib2.0-bin libglib2.0-dev
 
 before_script:
   # cmake

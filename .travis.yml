@@ -1,0 +1,91 @@
+language: cpp
+
+compiler:
+  - gcc
+  - clang
+
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "ACWDq/vepvntxIQyyon/emc2fXCPYZhpCFkQ/cWmVJ+hS6eGEBl5sEoyXZicPmZNxcdGyhGCprtcoMGwqfR31B0MSD5O0GVWrS+NNN5imH+Fqvyf2KcG+ByJSOLmeyn9UzrByS41hw2A8AfzwQg50sQjPHY27LmJNZsXizLTGt0="
+
+addons:
+  coverity_scan:
+    project:
+      name: "hawaii-desktop/qtaccountsservice"
+      description: "Build submitted via Travis CI"
+    notification_email: pierluigi.fiorini@gmail.com
+    build_command_prepend: "rm -fr build && mkdir build && cd build && cmake .."
+    build_command: "make -j 4"
+    branch_pattern: coverity_scan
+
+notifications:
+  email: false
+  irc:
+    channels:
+      - "chat.freenode.net#hawaii-desktop"
+    on_success: change
+    on_failure: change
+    use_notice: true
+
+before_install:
+  - if [ "$CXX" == "g++" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test; fi
+  - if [ "$CXX" == "clang++" ]; then sudo add-apt-repository -y ppa:h-rayflood/llvm; fi
+  - sudo add-apt-repository -y ppa:beineri/opt-qt551
+  - sudo apt-get update -qq
+
+install:
+  # gcc
+  - if [ "$CXX" == "g++" ]; then sudo apt-get install -qq gcc-4.8 g++-4.8; fi
+  - if [ "$CXX" == "g++" ]; then export CC="gcc-4.8"; export CXX="g++-4.8"; fi
+  # clang
+  #- if [ "$CXX" == "clang++" ]; then sudo apt-get install -qq clang-3.6; fi
+  #- if [ "$CXX" == "clang++" ]; then export CC="clang-3.6"; export CXX="clang++-3.6"; fi
+  # qt
+  - sudo apt-get -y install qt55declarative qt55tools
+
+before_script:
+  # cmake
+  - wget --no-check-certificate http://www.cmake.org/files/v3.3/cmake-3.3.0-Linux-x86_64.tar.gz -O cmake.tar.gz
+  - tar -xzf cmake.tar.gz -C $HOME
+  - export PATH=$HOME/cmake-3.3.0-Linux-x86_64/bin:$PATH
+  - cmake --version
+  # e-c-m
+  - wget --no-check-certificate http://download.kde.org/stable/frameworks/5.12/extra-cmake-modules-5.12.0.tar.xz
+  - tar -xJf extra-cmake-modules-5.12.0.tar.xz
+  - pushd extra-cmake-modules-5.12.0
+  - rm -rf build
+  - mkdir build
+  - cd build
+  - cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/ecm
+  - make && make install
+  - popd
+  - export PATH=$HOME/ecm/bin:$PATH
+  # xvfb for unit tests
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  # prepare
+  - source /opt/qt55/bin/qt55-env.sh
+  - echo $PATH
+  - mkdir build
+  - cd build
+  - cmake ..
+
+script:
+  - make
+  - make test
+
+notifications:
+  email: false
+  irc:
+    channels:
+    - chat.freenode.net#hawaii-desktop
+    use_notice: true
+    skip_join: true
+    on_success: always
+    on_failure: change
+  slack:
+    secure: EGWF118PTfBj/Oktmr20fc17JTM5gt7/j24k6HkiOI1J8S+sJyxhhtSjV54cgmsaEURJ7zUD/xi2wSSigi82k2F29wpELInfty/+j95vuY+7QO7nyVIINHjKranLUogKai9evHU2cvlNTq6e27pjkDbRO2HNKyzTb+Lb6D3VEOk=
+    on_success: always
+    on_failure: change

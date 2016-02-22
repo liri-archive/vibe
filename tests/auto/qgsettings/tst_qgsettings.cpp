@@ -49,13 +49,13 @@ private Q_SLOTS:
         qDebug() << "Using schema directory:" << qgetenv("GSETTINGS_SCHEMA_DIR");
         QCOMPARE(qgetenv("GSETTINGS_BACKEND"), QByteArrayLiteral("memory"));
 
-        QVERIFY2(QGSettings::isSchemaInstalled("org.hawaii.gsettings.test"),
-                 "Schema org.hawaii.gsettings.test must be installed");
+        QVERIFY2(QGSettings::isSchemaInstalled("org.hawaiios.gsettings.test"),
+                 "Schema org.hawaiios.gsettings.test must be installed");
 
-        settings = new QGSettings("org.hawaii.gsettings.test",
-                                  "/org/hawaii/gsettings/test/");
+        settings = new QGSettings("org.hawaiios.gsettings.test",
+                                  "/org/hawaiios/gsettings/test/");
         QVERIFY2(settings->isValid(),
-                 "Settings for org.hawaii.gsettings.test must be valid");
+                 "Settings for org.hawaiios.gsettings.test must be valid");
     }
 
     void cleanupTestCase()
@@ -200,17 +200,17 @@ private Q_SLOTS:
 
     void invalidSchemaNotInstalled()
     {
-        QVERIFY2(!QGSettings::isSchemaInstalled("org.hawaii.gsettings.invalid.test"),
-                 "Schema org.hawaii.gsettings.invalid.test must not be installed");
+        QVERIFY2(!QGSettings::isSchemaInstalled("org.hawaiios.gsettings.invalid.test"),
+                 "Schema org.hawaiios.gsettings.invalid.test must not be installed");
     }
 
     void invalidSchema()
     {
         QSKIP("Skipped because gio crashes");
 
-        QGSettings *invalidSettings = new QGSettings("org.hawaii.gsettings.invalid.test");
+        QGSettings *invalidSettings = new QGSettings("org.hawaiios.gsettings.invalid.test");
         QVERIFY2(!invalidSettings->isValid(),
-                 "Settings for org.hawaii.gsettings.invalidtest must not be valid");
+                 "Settings for org.hawaiios.gsettings.invalidtest must not be valid");
         invalidSettings->deleteLater();
     }
 
@@ -218,10 +218,10 @@ private Q_SLOTS:
     {
         QSKIP("Skipped because gio crashes");
 
-        QGSettings *invalidSettings = new QGSettings("org.hawaii.gsettings.test",
-                                                     "/org/hawaii/gsettings/invalid/test/");
+        QGSettings *invalidSettings = new QGSettings("org.hawaiios.gsettings.test",
+                                                     "/org/hawaiios/gsettings/invalid/test/");
         QVERIFY2(!invalidSettings->isValid(),
-                 "Path /org/hawaii/gsettings/invalid/test must not be found");
+                 "Path /org/hawaiios/gsettings/invalid/test must not be found");
         invalidSettings->deleteLater();
     }
 

@@ -26,7 +26,7 @@
 
 import QtQuick 2.0
 import QtTest 1.0
-import org.hawaii.settings 0.2
+import org.hawaiios.settings 0.2
 
 // Some tests start with a number to make sure order
 // of execution is respected, in fact we need to test
@@ -40,14 +40,14 @@ TestCase {
 
     Settings {
         id: settings
-        schema.id: "org.hawaii.gsettings.test"
-        schema.path: "/org/hawaii/gsettings/test/"
+        schema.id: "org.hawaiios.gsettings.test"
+        schema.path: "/org/hawaiios/gsettings/test/"
         onValueChanged: changes.push([key, value])
     }
 
     Settings {
         id: invalidSettings
-        schema.id: "org.hawaii.gsettings.invalid.test"
+        schema.id: "org.hawaiios.gsettings.invalid.test"
     }
 
     function test_000_valid() {

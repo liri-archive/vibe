@@ -26,7 +26,7 @@
 
 #include <QtTest/QtTest>
 
-#include "qgsettings.h"
+#include <Hawaii/QGSettings>
 
 using namespace Hawaii;
 

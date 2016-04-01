@@ -1,5 +1,5 @@
 include_directories(
-    ${CMAKE_SOURCE_DIR}/libhawaii
+    ${CMAKE_BINARY_DIR}/src
 )
 
 add_definitions(

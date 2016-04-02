@@ -17,7 +17,6 @@ addons:
 cache:
   directories:
     - .cmake
-    - .ecm
     - .qt
     - .glib
 

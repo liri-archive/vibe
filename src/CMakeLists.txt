@@ -83,6 +83,8 @@ ecm_configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/HawaiiConfig.cmak
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/HawaiiConfig.cmake"
               "${CMAKE_CURRENT_BINARY_DIR}/HawaiiConfigVersion.cmake"
               "${CMAKE_CURRENT_SOURCE_DIR}/HawaiiMacros.cmake"
+              "${CMAKE_CURRENT_SOURCE_DIR}/HawaiiTranslationLoader.cmake"
+              "${CMAKE_CURRENT_SOURCE_DIR}/HawaiiTranslationLoader.cpp.in"
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel)
 

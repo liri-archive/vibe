@@ -26,7 +26,7 @@ static void loadQtTranslation()
     // Find the translations directory
     const QString translationsDir =
         QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                               "@ARGS_TRANSLATIONS_DIR@",
+                               QLatin1String("@ARGS_TRANSLATIONS_DIR@"),
                                QStandardPaths::LocateDirectory);
 
     // Load application translations

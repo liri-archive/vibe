@@ -11,7 +11,6 @@ set(SOURCES
 )
 
 add_library(gsettingsplugin SHARED ${SOURCES})
-set_target_properties(gsettingsplugin PROPERTIES PREFIX "")
 target_link_libraries(gsettingsplugin
                       Qt5::Core
                       Qt5::Gui

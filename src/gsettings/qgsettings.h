@@ -29,13 +29,13 @@
 
 #include <QtCore/QObject>
 
-#include <hawaii/hawaii_export.h>
+#include <Hawaii/gsettings/hawaii_gsettings_export.h>
 
 namespace Hawaii {
 
 class QGSettingsPrivate;
 
-class HAWAII_EXPORT QGSettings : public QObject
+class HAWAIIGSETTINGS_EXPORT QGSettings : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool valid READ isValid CONSTANT)

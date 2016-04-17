@@ -1,5 +1,7 @@
 include_directories(
     ${CMAKE_BINARY_DIR}/src
+    ${CMAKE_BINARY_DIR}/src/gsettings
+    ${CMAKE_BINARY_DIR}/src/gsettings/Hawaii
 )
 
 set(SOURCES
@@ -14,7 +16,7 @@ target_link_libraries(settingsplugin
                       Qt5::Gui
                       Qt5::Qml
                       Qt5::Quick
-                      Hawaii::Hawaii)
+                      Hawaii::GSettings)
 
 install(FILES qmldir plugins.qmltypes
     DESTINATION ${QML_INSTALL_DIR}/org/hawaiios/settings)

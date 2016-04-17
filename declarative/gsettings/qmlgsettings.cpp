@@ -24,10 +24,12 @@
  * $END_LICENSE$
  ***************************************************************************/
 
-#include <Hawaii/QGSettings>
+#include <Hawaii/GSettings/QGSettings>
 
 #include "qmlgsettings.h"
 #include "qmlgsettingsschema.h"
+
+using namespace Hawaii;
 
 QmlGSettings::QmlGSettings(QObject *parent)
     : QQmlPropertyMap(this, parent)
@@ -47,13 +49,13 @@ void QmlGSettings::classBegin()
 
 void QmlGSettings::componentComplete()
 {
-    bool installed = Hawaii::QGSettings::isSchemaInstalled(m_schema->id());
+    bool installed = QGSettings::isSchemaInstalled(m_schema->id());
     if (installed) {
         // Load settings
-        m_settings = new Hawaii::QGSettings(m_schema->id(), m_schema->path(), this);
+        m_settings = new QGSettings(m_schema->id(), m_schema->path(), this);
         if (!m_settings->isValid())
             return;
-        connect(m_settings, &Hawaii::QGSettings::settingChanged, this, [this](const QString &key) {
+        connect(m_settings, &QGSettings::settingChanged, this, [this](const QString &key) {
             // Get the key value
             QVariant newValue = m_settings->value(key);
 

@@ -28,18 +28,18 @@
 #include "qmlgsettings.h"
 #include "qmlgsettingsschema.h"
 
-class SettingsPlugin : public QQmlExtensionPlugin
+class GSettingsPlugin : public QQmlExtensionPlugin
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
 public:
     void registerTypes(const char *uri)
     {
-        // @uri org.hawaii.settings
-        Q_ASSERT(uri == QStringLiteral("org.hawaiios.settings"));
+        // @uri Hawaii.GSettings
+        Q_ASSERT(uri == QStringLiteral("Hawaii.GSettings"));
 
-        qmlRegisterType<QmlGSettings>(uri, 0, 2, "Settings");
-        qmlRegisterUncreatableType<QmlGSettingsSchema>(uri, 0, 2, "SettingsSchema",
+        qmlRegisterType<QmlGSettings>(uri, 1, 0, "Settings");
+        qmlRegisterUncreatableType<QmlGSettingsSchema>(uri, 1, 0, "SettingsSchema",
                                                        QStringLiteral("Cannot instantiate SettingsSchema objects"));
     }
 };

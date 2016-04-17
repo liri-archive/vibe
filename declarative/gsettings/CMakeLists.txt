@@ -10,8 +10,9 @@ set(SOURCES
     qmlgsettingsschema.cpp
 )
 
-add_library(settingsplugin SHARED ${SOURCES})
-target_link_libraries(settingsplugin
+add_library(gsettingsplugin SHARED ${SOURCES})
+set_target_properties(gsettingsplugin PROPERTIES PREFIX "")
+target_link_libraries(gsettingsplugin
                       Qt5::Core
                       Qt5::Gui
                       Qt5::Qml
@@ -19,6 +20,6 @@ target_link_libraries(settingsplugin
                       Hawaii::GSettings)
 
 install(FILES qmldir plugins.qmltypes
-    DESTINATION ${QML_INSTALL_DIR}/org/hawaiios/settings)
-install(TARGETS settingsplugin
-    DESTINATION ${QML_INSTALL_DIR}/org/hawaiios/settings)
+    DESTINATION ${QML_INSTALL_DIR}/Hawaii/GSettings)
+install(TARGETS gsettingsplugin
+    DESTINATION ${QML_INSTALL_DIR}/Hawaii/GSettings)

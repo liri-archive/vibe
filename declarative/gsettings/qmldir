@@ -1,4 +1,4 @@
-module org.hawaiios.settings
-plugin settingsplugin
-classname SettingPlugin
+module Hawaii.GSettings
+plugin gsettingsplugin
+classname GSettingPlugin
 typeinfo plugins.qmltypes

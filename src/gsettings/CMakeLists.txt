@@ -31,7 +31,7 @@ target_include_directories(HawaiiGSettings INTERFACE "$<INSTALL_INTERFACE:${HAWA
 set_target_properties(HawaiiGSettings PROPERTIES
                       VERSION ${PROJECT_VERSION}
                       SOVERSION ${PROJECT_SOVERSION}
-                      EXPORT_NAME HawaiiGSettings)
+                      EXPORT_NAME GSettings)
 
 ecm_generate_headers(HawaiiGSettings_CamelCase_HEADERS
   HEADER_NAMES

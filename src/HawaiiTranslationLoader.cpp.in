@@ -4,17 +4,18 @@
  * Attention: All changes will be overwritten!!!
  */
 
+#ifndef QT_NO_TRANSLATION
+
 #include <QtCore/QCoreApplication>
 #include <QtCore/QLocale>
 #include <QtCore/QStandardPaths>
 #include <QtCore/QTranslator>
 #include <QtCore/QLibraryInfo>
 
-static void loadQtTranslation()
+static void _HawaiiTranslationLoader()
 {
     QString locale = QLocale::system().name();
 
-#ifndef QT_NO_TRANSLATION
     // Load Qt translations
     QTranslator *qtTranslator = new QTranslator(qApp);
     if (qtTranslator->load(QStringLiteral("qt_%1").arg(locale), QLibraryInfo::location(QLibraryInfo::TranslationsPath))) {
@@ -35,10 +36,11 @@ static void loadQtTranslation()
         QCoreApplication::installTranslator(appTranslator);
     } else if (locale == QLatin1String("C") ||
                 locale.startsWith(QLatin1String("en"))) {
-        // English is the default. It's translated anyway.
+        // English is the default, it's translated anyway
         delete appTranslator;
     }
-#endif
 }
 
-Q_COREAPP_STARTUP_FUNCTION(loadQtTranslation)
+Q_COREAPP_STARTUP_FUNCTION(_HawaiiTranslationLoader)
+
+#endif

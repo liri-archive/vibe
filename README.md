@@ -1,24 +1,35 @@
 Hawaii libraries
 ================
 
+[![GitHub release](https://img.shields.io/github/release/hawaii-desktop/libhawaii.svg)](https://github.com/hawaii-desktop/hawaii-shell)
+[![GitHub issues](https://img.shields.io/github/issues/hawaii-desktop/libhawaii.svg)](https://github.com/hawaii-desktop/hawaii-shell/issues)
+[![IRC Network](https://img.shields.io/badge/irc-freenode-blue.svg "IRC Freenode")](https://webchat.freenode.net/?channels=hawaii-desktop)
+
 These are the libraries used by Hawaii Shell and other projects related
 to the Hawaii desktop environment.
 
+## Overview
+
+This library includes
+
+* A Qt-style wrapper for GSettings that provides a nice
+  settings API based on schemas with change notifications.
+
+## License
+
+Licensed under the GNU Lesser General Public License version 3.0 terms.
+
 ## Dependencies
 
-In order to build and install these libraries you need Qt 5.0 or better with
-at least the following modules:
+Qt >= 5.4.0 with at least the following modules is required:
 
-* qtbase
-* qtdeclarative
+* [qtbase](http://code.qt.io/cgit/qt/qtbase.git)
+* [qtdeclarative](http://code.qt.io/cgit/qt/qtdeclarative.git)
 
-You can either build Qt from git yourself or download binaries.
+The following modules and their dependencies are required:
 
-More information about building Qt from git can be found here:
-
-  http://qt-project.org/wiki/Building-Qt-5-from-Git
-
-Qt 5 binaries can be downloaded from http://qt-project.org/downloads
+* [ECM >= 1.4.0](http://quickgit.kde.org/?p=extra-cmake-modules.git)
+* [glib >= 2.31.0](https://git.gnome.org/browse/glib)
 
 ## Build
 
@@ -48,13 +59,24 @@ cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaii -DCMAKE_BUILD_TYPE=Release ..
 If not passed, the `CMAKE_INSTALL_PREFIX` parameter defaults to /usr/local.
 You have to specify a path that fits your needs, /opt/hawaii is just an example.
 
-Package maintainers would pass `-DCMAKE_INSTALL_PREFIX=/usr`.
-
 The `CMAKE_BUILD_TYPE` parameter allows the following values:
 
 * **Debug:** debug build
 * **Release:** release build
 * **RelWithDebInfo:** release build with debugging information
+
+### System-wide installation
+
+Those who want to perform a system-wide installation, such as package
+maintainers, should pass different arguments to cmake:
+
+```sh
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=/usr -DKDE_INSTALL_USE_QT_SYS_PATHS=ON ..
+```
+
+Feel free to choose whatever `CMAKE_BUILD_TYPE` value you desire.
 
 ## Installation
 

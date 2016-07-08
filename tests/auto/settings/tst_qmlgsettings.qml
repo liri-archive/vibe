@@ -26,7 +26,7 @@
 
 import QtQuick 2.0
 import QtTest 1.0
-import Hawaii.GSettings 1.0
+import Hawaii.Settings 1.0
 
 // Some tests start with a number to make sure order
 // of execution is respected, in fact we need to test

@@ -29,19 +29,19 @@
 
 #include <QtCore/QObject>
 
-#include <Hawaii/gsettings/hawaii_gsettings_export.h>
+#include <Hawaii/Settings/hawaii_settings_export.h>
 
-namespace Hawaii {
+namespace Hawaii
+{
 
 class QGSettingsPrivate;
 
-class HAWAIIGSETTINGS_EXPORT QGSettings : public QObject
+class HAWAIISETTINGS_EXPORT QGSettings : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool valid READ isValid CONSTANT)
 public:
-    QGSettings(const QString &schemaId, const QString &path = QString(),
-               QObject *parent = 0);
+    QGSettings(const QString &schemaId, const QString &path = QString(), QObject *parent = 0);
     ~QGSettings();
 
     bool isValid() const;

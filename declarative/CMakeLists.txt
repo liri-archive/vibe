@@ -1,1 +1,2 @@
-add_subdirectory(gsettings)
+add_subdirectory(settings)
+add_subdirectory(wallet)

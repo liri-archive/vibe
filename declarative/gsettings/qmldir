@@ -1,4 +1,0 @@
-module Hawaii.GSettings
-plugin gsettingsplugin
-classname GSettingPlugin
-typeinfo plugins.qmltypes

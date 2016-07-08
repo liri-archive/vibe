@@ -1,7 +1,7 @@
 include_directories(
     ${CMAKE_BINARY_DIR}/src
-    ${CMAKE_BINARY_DIR}/src/gsettings
-    ${CMAKE_BINARY_DIR}/src/gsettings/Hawaii
+    ${CMAKE_BINARY_DIR}/src/settings
+    ${CMAKE_BINARY_DIR}/src/settings/Hawaii
 )
 
 add_definitions(
@@ -13,7 +13,7 @@ set(tst_qgsettings_SRCS
     tst_qgsettings.cpp
 )
 add_executable(tst_qgsettings ${tst_qgsettings_SRCS})
-target_link_libraries(tst_qgsettings Qt5::Test Hawaii::GSettings)
+target_link_libraries(tst_qgsettings Qt5::Test Hawaii::Settings)
 add_test(hawaii-test-qgsettings tst_qgsettings)
 ecm_mark_as_test(tst_qgsettings)
 

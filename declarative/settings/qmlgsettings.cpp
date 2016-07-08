@@ -24,7 +24,7 @@
  * $END_LICENSE$
  ***************************************************************************/
 
-#include <Hawaii/GSettings/QGSettings>
+#include <Hawaii/Settings/QGSettings>
 
 #include "qmlgsettings.h"
 #include "qmlgsettingsschema.h"
@@ -32,20 +32,14 @@
 using namespace Hawaii;
 
 QmlGSettings::QmlGSettings(QObject *parent)
-    : QQmlPropertyMap(this, parent)
-    , m_schema(new QmlGSettingsSchema(this))
-    , m_settings(Q_NULLPTR)
+        : QQmlPropertyMap(this, parent), m_schema(new QmlGSettingsSchema(this)),
+          m_settings(Q_NULLPTR)
 {
 }
 
-QmlGSettingsSchema *QmlGSettings::schema() const
-{
-    return m_schema;
-}
+QmlGSettingsSchema *QmlGSettings::schema() const { return m_schema; }
 
-void QmlGSettings::classBegin()
-{
-}
+void QmlGSettings::classBegin() {}
 
 void QmlGSettings::componentComplete()
 {

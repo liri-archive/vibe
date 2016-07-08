@@ -2,9 +2,11 @@
  * This file is part of Hawaii.
  *
  * Copyright (C) 2015 Pier Luigi Fiorini
+ * Copyright (C) 2016 Michael Spencer <sonrisesoftware@gmail.com>
  *
  * Author(s):
  *    Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+ *    Michael Spencer <sonrisesoftware@gmail.com>
  *
  * $BEGIN_LICENSE:LGPL3$
  *
@@ -28,19 +30,21 @@
 #include "qmlgsettings.h"
 #include "qmlgsettingsschema.h"
 
-class GSettingsPlugin : public QQmlExtensionPlugin
+class HawaiiSettingsPlugin : public QQmlExtensionPlugin
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
+
 public:
     void registerTypes(const char *uri)
     {
-        // @uri Hawaii.GSettings
-        Q_ASSERT(uri == QStringLiteral("Hawaii.GSettings"));
+        // @uri Hawaii.Settings
+        Q_ASSERT(uri == QStringLiteral("Hawaii.Settings"));
 
         qmlRegisterType<QmlGSettings>(uri, 1, 0, "Settings");
-        qmlRegisterUncreatableType<QmlGSettingsSchema>(uri, 1, 0, "SettingsSchema",
-                                                       QStringLiteral("Cannot instantiate SettingsSchema objects"));
+        qmlRegisterUncreatableType<QmlGSettingsSchema>(
+                uri, 1, 0, "SettingsSchema",
+                QStringLiteral("Cannot instantiate SettingsSchema objects"));
     }
 };
 

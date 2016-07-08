@@ -35,7 +35,8 @@ extern "C" {
 
 Q_LOGGING_CATEGORY(QGSETTINGS, "hawaii.qgsettings")
 
-namespace Hawaii {
+namespace Hawaii
+{
 
 /*
  * QGSettingsPrivate
@@ -45,11 +46,7 @@ class QGSettingsPrivate
 {
 public:
     QGSettingsPrivate(const QString &schemaId, const QString &path, QGSettings *q)
-        : schemaId(schemaId)
-        , path(path)
-        , valid(false)
-        , settings(Q_NULLPTR)
-        , schema(Q_NULLPTR)
+            : schemaId(schemaId), path(path), valid(false), settings(Q_NULLPTR), schema(Q_NULLPTR)
     {
         if (path.isEmpty())
             settings = g_settings_new(schemaId.toUtf8().constData());
@@ -58,8 +55,7 @@ public:
                                                 path.toUtf8().constData());
         if (settings) {
             g_object_get(settings, "settings-schema", &schema, Q_NULLPTR);
-            g_signal_connect(settings, "changed",
-                             G_CALLBACK(QGSettingsPrivate::settingChanged), q);
+            g_signal_connect(settings, "changed", G_CALLBACK(QGSettingsPrivate::settingChanged), q);
         }
 
         valid = settings && schema;
@@ -94,15 +90,11 @@ public:
  */
 
 QGSettings::QGSettings(const QString &schemaId, const QString &path, QObject *parent)
-    : QObject(parent)
-    , d_ptr(new QGSettingsPrivate(schemaId, path, this))
+        : QObject(parent), d_ptr(new QGSettingsPrivate(schemaId, path, this))
 {
 }
 
-QGSettings::~QGSettings()
-{
-    delete d_ptr;
-}
+QGSettings::~QGSettings() { delete d_ptr; }
 
 bool QGSettings::isValid() const
 {
@@ -246,7 +238,7 @@ QStringList QGSettings::keys() const
     if (!d->valid)
         return result;
 
-    gchar **keys = g_settings_list_keys(d->settings);
+    gchar **keys = g_settings_schema_list_keys(d->schema);
     for (int i = 0; keys[i]; i++)
         result.append(Utils::toCamelCase(keys[i]));
     g_strfreev(keys);
@@ -268,7 +260,8 @@ QStringList QGSettings::schemas()
 bool QGSettings::isSchemaInstalled(const QString &schemaId)
 {
     GSettingsSchemaSource *source = g_settings_schema_source_get_default();
-    GSettingsSchema *schema = g_settings_schema_source_lookup(source, schemaId.toUtf8().constData(), true);
+    GSettingsSchema *schema =
+            g_settings_schema_source_lookup(source, schemaId.toUtf8().constData(), true);
     if (schema) {
         g_settings_schema_unref(schema);
         return true;

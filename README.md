@@ -1,89 +1,57 @@
-Hawaii libraries
-================
+Hawaii Core Library
+===================
 
-[![GitHub release](https://img.shields.io/github/release/hawaii-desktop/libhawaii.svg)](https://github.com/hawaii-desktop/hawaii-shell)
-[![GitHub issues](https://img.shields.io/github/issues/hawaii-desktop/libhawaii.svg)](https://github.com/hawaii-desktop/hawaii-shell/issues)
-[![IRC Network](https://img.shields.io/badge/irc-freenode-blue.svg "IRC Freenode")](https://webchat.freenode.net/?channels=hawaii-desktop)
+[![ZenHub.io](https://img.shields.io/badge/supercharged%20by-zenhub.io-blue.svg)](https://zenhub.io)
 
-These are the libraries used by Hawaii Shell and other projects related
-to the Hawaii desktop environment.
+[![License](https://img.shields.io/badge/license-LGPLv3.0-blue.svg)](http://www.gnu.org/licenses/lgpl.txt)
+[![GitHub release](https://img.shields.io/github/release/hawaii-desktop/libhawaii.svg)](https://github.com/hawaii-desktop/libhawaii)
+[![Build Status](https://travis-ci.org/hawaii-desktop/libhawaii.svg?branch=develop)](https://travis-ci.org/hawaii-desktop/libhawaii)
+[![GitHub issues](https://img.shields.io/github/issues/hawaii-desktop/libhawaii.svg)](https://github.com/hawaii-desktop/libhawaii/issues)
+[![Maintained](https://img.shields.io/maintenance/yes/2016.svg)](https://github.com/hawaii-desktop/libhawaii/commits/develop)
 
-## Overview
+A collection of core classes used throughout Hawaii.
 
-This library includes
+## Features
 
-* A Qt-style wrapper for GSettings that provides a nice
-  settings API based on schemas with change notifications.
+This library includes:
 
-## License
+ * A Qt-style wrapper for GSettings that provides a nice
+   settings API based on schemas with change notifications.
+ * An enhanced `QList` that provides a model with change notifications for QML.
+ * A QML wrapper around KWallet
+
+### Dependencies
+
+ Qt >= 5.4.0 with at least the following modules is required:
+
+ * [qtbase](http://code.qt.io/cgit/qt/qtbase.git)
+ * [qtdeclarative](http://code.qt.io/cgit/qt/qtdeclarative.git)
+
+ The following modules and their dependencies are required:
+
+ * [ECM >= 1.4.0](http://quickgit.kde.org/?p=extra-cmake-modules.git)
+ * [glib >= 2.31.0](https://git.gnome.org/browse/glib)
+ * [KWallet](http://api.kde.org/frameworks-api/frameworks5-apidocs/kwallet/html/)
+
+### Installation
+
+From the root of the repository, run:
+
+```sh
+mkdir build; cd build
+cmake .. -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+make
+make install # use sudo if necessary
+```
+
+On the `cmake` line, you can specify additional configuration parameters:
+
+ * `-DCMAKE_INSTALL_PREFIX=/path/to/install` (for example, `/opt/hawaii` or `/usr`)
+ * `-DCMAKE_BUILD_TYPE=<build_type>`, where `<build_type>` is one of:
+   * **Debug:** debug build
+   * **Release:** release build
+   * **RelWithDebInfo:** release build with debugging information
+
+### Licensing
 
 Licensed under the GNU Lesser General Public License version 3.0 terms.
-
-## Dependencies
-
-Qt >= 5.4.0 with at least the following modules is required:
-
-* [qtbase](http://code.qt.io/cgit/qt/qtbase.git)
-* [qtdeclarative](http://code.qt.io/cgit/qt/qtdeclarative.git)
-
-The following modules and their dependencies are required:
-
-* [ECM >= 1.4.0](http://quickgit.kde.org/?p=extra-cmake-modules.git)
-* [glib >= 2.31.0](https://git.gnome.org/browse/glib)
-
-## Build
-
-Building this module is a piece of cake.
-
-Assuming you are in the source directory, just create a build directory
-and run cmake:
-
-```sh
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaii ..
-```
-
-To do a debug build the last command can be:
-
-```sh
-cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaii -DCMAKE_BUILD_TYPE=Debug ..
-```
-
-To do a release build instead it can be:
-
-```sh
-cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaii -DCMAKE_BUILD_TYPE=Release ..
-```
-
-If not passed, the `CMAKE_INSTALL_PREFIX` parameter defaults to /usr/local.
-You have to specify a path that fits your needs, /opt/hawaii is just an example.
-
-The `CMAKE_BUILD_TYPE` parameter allows the following values:
-
-* **Debug:** debug build
-* **Release:** release build
-* **RelWithDebInfo:** release build with debugging information
-
-### System-wide installation
-
-Those who want to perform a system-wide installation, such as package
-maintainers, should pass different arguments to cmake:
-
-```sh
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=/usr -DKDE_INSTALL_USE_QT_SYS_PATHS=ON ..
-```
-
-Feel free to choose whatever `CMAKE_BUILD_TYPE` value you desire.
-
-## Installation
-
-It's really easy, it's just a matter of typing:
-
-```sh
-make install
-```
-
-from the build directory.

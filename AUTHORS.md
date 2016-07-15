@@ -1,5 +1,5 @@
-Hawaii Core Library
-===================
+libQmlOS
+========
 
 # Authors
 

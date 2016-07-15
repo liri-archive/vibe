@@ -1,4 +1,4 @@
-project(HawawiiCore)
+project(libQmlOS)
 
 cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
 cmake_policy(VERSION 3.4.1)
@@ -11,12 +11,12 @@ set(CMAKE_AUTORCC ON)
 set(APPLE_SUPPRESS_X11_WARNING ON)
 
 # Set version
-set(PROJECT_VERSION "0.9.90")
+set(PROJECT_VERSION "0.8.90")
 set(PROJECT_VERSION_MAJOR 0)
 set(PROJECT_SOVERSION 0)
 
 # Set up packaging
-set(CPACK_PACKAGE_NAME "libhawaii")
+set(CPACK_PACKAGE_NAME "libqmlos")
 set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
 set(CPACK_GENERATOR "TGZ")
 set(CPACK_SET_DESTDIR FALSE)
@@ -49,15 +49,15 @@ endif()
 # gio (for the GSettings Qt wrapper)
 pkg_check_modules(gio gio-2.0 REQUIRED)
 
-# Minimum version requirements
-set(QT_MIN_VERSION "5.6.0")
-set(KF5_MIN_VERSION "5.8.0")
-
 # Find Qt5
-find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED COMPONENTS Core Gui Qml Quick)
+set(REQUIRED_QT_VERSION "5.6.0")
+find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED COMPONENTS
+             Gui Qml Quick)
 
 # Find KF5
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Wallet)
+set(REQUIRED_KF5_VERSION "5.8.0")
+find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS
+             Wallet)
 
 # Subdirectories
 add_subdirectory(src)

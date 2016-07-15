@@ -1,5 +1,3 @@
-include(ECMMarkAsTest)
-
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Test QuickTest)
+add_custom_target(check COMMAND ${CMAKE_CTEST_COMMAND} -VV)
 
 add_subdirectory(settings)

@@ -25,7 +25,7 @@
 #include <QBasicTimer>
 #include <functional>
 
-#include <Hawaii/Core/hawaii_core_export.h>
+#include <Hawaii/core/hawaii_core_export.h>
 
 class HAWAIICORE_EXPORT QObjectListModel : public QAbstractListModel
 {

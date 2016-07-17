@@ -20,7 +20,7 @@ target_link_libraries(HawaiiCore
 
 ##############################################################################
 
-generate_export_header(HawaiiCore EXPORT_FILE_NAME ${CMAKE_CURRENT_BINARY_DIR}/Hawaii/Core/hawaii_core_export.h)
+generate_export_header(HawaiiCore EXPORT_FILE_NAME ${CMAKE_CURRENT_BINARY_DIR}/Hawaii/core/hawaii_core_export.h)
 
 target_include_directories(HawaiiCore INTERFACE "$<INSTALL_INTERFACE:${HAWAII_INCLUDEDIR}>")
 
@@ -48,7 +48,7 @@ install(TARGETS HawaiiCore EXPORT HawaiiCoreTargets ${KDE_INSTALL_TARGETS_DEFAUL
 
 install(
     FILES
-      ${CMAKE_CURRENT_BINARY_DIR}/Hawaii/Core/hawaii_core_export.h
+      ${CMAKE_CURRENT_BINARY_DIR}/Hawaii/core/hawaii_core_export.h
       ${HawaiiCore_HEADERS}
       qquicklist.h
       qobjectlistmodel.h

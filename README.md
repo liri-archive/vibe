@@ -55,3 +55,21 @@ On the `cmake` line, you can specify additional configuration parameters:
 ## Licensing
 
 Licensed under the GNU Lesser General Public License version 3.0 terms.
+
+## Notes
+
+### Logging categories
+
+Qt 5.2 introduced logging categories and we takes advantage of
+them to make debugging easier.
+
+Please refer to the [Qt](http://doc.qt.io/qt-5/qloggingcategory.html) documentation
+to learn how to enable them.
+
+### Available categories
+
+ * Library:
+   * **hawaii.qgsettings:** Qt GSettings wrapper
+
+ * Settings QML plugin:
+   * **hawaii.qml.settings:** Settings.

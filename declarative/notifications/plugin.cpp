@@ -36,10 +36,10 @@ class NotificationsPlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri)
     {
-        // @uri org.hawaiios.notifications
-        Q_ASSERT(uri == QStringLiteral("org.hawaiios.notifications"));
+        // @uri Hawaii.Notifications
+        Q_ASSERT(uri == QStringLiteral("Hawaii.Notifications"));
 
-        qmlRegisterSingletonType<Notifications>(uri, 0, 1, "NotificationsService", [](QQmlEngine *engine, QJSEngine *) {
+        qmlRegisterSingletonType<Notifications>(uri, 1, 0, "NotificationsService", [](QQmlEngine *engine, QJSEngine *) {
             Notifications *notifications = new Notifications();
             engine->addImageProvider(QStringLiteral("notifications"), new NotificationsImageProvider(notifications->daemon()));
             return static_cast<QObject *>(notifications);

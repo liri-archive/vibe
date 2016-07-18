@@ -60,6 +60,7 @@ find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS
              Wallet Solid)
 
 # Subdirectories
+add_subdirectory(headers)
 add_subdirectory(src)
 add_subdirectory(declarative)
 add_subdirectory(tests)

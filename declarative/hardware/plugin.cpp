@@ -35,8 +35,8 @@ class HardwarePlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri)
     {
-        // @uri org.hawaiios.hardware
-        Q_ASSERT(uri == QStringLiteral("org.hawaiios.hardware"));
+        // @uri Hawaii.Hardware
+        Q_ASSERT(uri == QStringLiteral("Hawaii.Hardware"));
 
         qmlRegisterType<HardwareEngine>(uri, 0, 1, "HardwareEngine");
         qmlRegisterUncreatableType<Battery>(uri, 0, 1, "Battery",

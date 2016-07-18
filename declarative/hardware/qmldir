@@ -1,4 +1,4 @@
-module org.hawaiios.hardware
+module Hawaii.Hardware
 plugin hardwareplugin
 classname HardwarePlugin
 typeinfo plugins.qmltypes

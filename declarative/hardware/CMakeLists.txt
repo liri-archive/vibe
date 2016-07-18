@@ -12,6 +12,6 @@ target_link_libraries(hardwareplugin
                       KF5::Solid)
 
 install(FILES qmldir plugins.qmltypes
-    DESTINATION ${QML_INSTALL_DIR}/org/hawaiios/hardware)
+    DESTINATION ${QML_INSTALL_DIR}/Hawaii/Hardware)
 install(TARGETS hardwareplugin
-    DESTINATION ${QML_INSTALL_DIR}/org/hawaiios/hardware)
+    DESTINATION ${QML_INSTALL_DIR}/Hawaii/Hardware)

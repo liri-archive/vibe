@@ -52,7 +52,7 @@ pkg_check_modules(gio gio-2.0 REQUIRED)
 # Find Qt5
 set(REQUIRED_QT_VERSION "5.6.0")
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED COMPONENTS
-             Gui Qml Quick QuickTest)
+             DBus Gui Qml Quick QuickTest)
 
 # Find KF5
 set(REQUIRED_KF5_VERSION "5.8.0")

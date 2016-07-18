@@ -38,10 +38,10 @@ public:
         // @uri Hawaii.Hardware
         Q_ASSERT(uri == QStringLiteral("Hawaii.Hardware"));
 
-        qmlRegisterType<HardwareEngine>(uri, 0, 1, "HardwareEngine");
-        qmlRegisterUncreatableType<Battery>(uri, 0, 1, "Battery",
+        qmlRegisterType<HardwareEngine>(uri, 1, 0, "HardwareEngine");
+        qmlRegisterUncreatableType<Battery>(uri, 1, 0, "Battery",
                                             QStringLiteral("Cannot create Battery object"));
-        qmlRegisterUncreatableType<StorageDevice>(uri, 0, 1, "StorageDevice",
+        qmlRegisterUncreatableType<StorageDevice>(uri, 1, 0, "StorageDevice",
                                                   QStringLiteral("Cannot create StorageDevice object"));
     }
 };

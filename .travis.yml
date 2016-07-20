@@ -6,7 +6,7 @@ arch:
     - cmake
     - extra-cmake-modules
     - kwallet
-    - ksolid
+    - solid
     - networkmanager-qt
     - xorg-server-xvfb
     - git

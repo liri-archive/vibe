@@ -19,6 +19,8 @@ This library includes:
    settings API based on schemas with change notifications.
  * An enhanced `QList` that provides a model with change notifications for QML.
  * A QML wrapper around KWallet
+ * A QML plugin to access storage devices and batteries
+ * A QML plugin for freedesktop.org notification servers
 
 ## Dependencies
 
@@ -31,7 +33,8 @@ The following modules and their dependencies are required:
 
  * [ECM >= 1.7.0](http://quickgit.kde.org/?p=extra-cmake-modules.git)
  * [glib >= 2.31.0](https://git.gnome.org/browse/glib)
- * [KWallet](http://api.kde.org/frameworks-api/frameworks5-apidocs/kwallet/html/)
+ * [kwallet](http://quickgit.kde.org/?p=kwallet.git)
+ * [solid](http://quickgit.kde.org/?p=solid.git)
 
 ## Installation
 
@@ -73,3 +76,11 @@ to learn how to enable them.
 
  * Settings QML plugin:
    * **hawaii.qml.settings:** Settings.
+
+ * Hardware QML plugin:
+   * **hawaii.qml.hardware:** Hardware service.
+   * **hawaii.qml.hardware.battery:** Battery information.
+   * **hawaii.qml.hardware.storagedevice:** Storage device information.
+
+ * Notifications QML plugin:
+   * **hawaii.qml.notifications:** Notifications service.

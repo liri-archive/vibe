@@ -27,7 +27,7 @@ add_custom_target(dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
 
 # ECM
 find_package(ECM 1.7.0 REQUIRED NO_MODULE)
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
 # Macros
 include(FeatureSummary)
@@ -52,12 +52,12 @@ pkg_check_modules(gio gio-2.0 REQUIRED)
 # Find Qt5
 set(REQUIRED_QT_VERSION "5.6.0")
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED COMPONENTS
-             DBus Gui Qml Quick QuickTest)
+             Network Xml DBus Gui Qml Quick QuickTest)
 
 # Find KF5
 set(REQUIRED_KF5_VERSION "5.8.0")
 find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS
-             Wallet Solid)
+             Wallet Solid NetworkManagerQt ModemManagerQt)
 
 # Subdirectories
 add_subdirectory(headers)

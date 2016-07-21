@@ -36,6 +36,8 @@ The following modules and their dependencies are required:
  * [glib >= 2.31.0](https://git.gnome.org/browse/glib)
  * [kwallet](http://quickgit.kde.org/?p=kwallet.git)
  * [solid](http://quickgit.kde.org/?p=solid.git)
+ * [networkmanager-qt](http://quickgit.kde.org/?p=networkmanager-qt.git)
+ * [modemmanager-qt](http://quickgit.kde.org/?p=modemmanager-qt.git)
 
 ## Installation
 
@@ -89,3 +91,6 @@ to learn how to enable them.
  * MPRIS2 QML plugin:
    * **hawaii.qml.mpris2:** MPRIS2 engine
    * **hawaii.qml.mpris2.player:** MPRIS2 player interface
+
+ * Network QML plugin:
+   * **hawaii.qml.networkmanager:** NetworkManager support.

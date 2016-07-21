@@ -1,5 +1,6 @@
 add_subdirectory(hardware)
 add_subdirectory(mpris2)
+add_subdirectory(networkmanager)
 add_subdirectory(notifications)
 add_subdirectory(settings)
 add_subdirectory(wallet)

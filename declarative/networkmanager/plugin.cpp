@@ -42,18 +42,18 @@ class NetworkManagerPlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri)
     {
-        // @uri org.hawaiios.networkmanager
-        Q_ASSERT(uri == QStringLiteral("org.hawaiios.networkmanager"));
+        Q_ASSERT(uri == QLatin1String("Hawaii.NetworkManager"));
 
-        qmlRegisterType<AvailableDevices>(uri, 0, 1, "AvailableDevices");
-        qmlRegisterType<ConnectionIcon>(uri, 0, 1, "ConnectionIcon");
-        qmlRegisterType<EnabledConnections>(uri, 0, 1, "EnabledConnections");
-        qmlRegisterUncreatableType<Enums>(uri, 0, 1, "Enums",
+        // @uri Hawaii.NetworkManager
+        qmlRegisterType<AvailableDevices>(uri, 1, 0, "AvailableDevices");
+        qmlRegisterType<ConnectionIcon>(uri, 1, 0, "ConnectionIcon");
+        qmlRegisterType<EnabledConnections>(uri, 1, 0, "EnabledConnections");
+        qmlRegisterUncreatableType<Enums>(uri, 1, 0, "Enums",
                                           QLatin1String("Cannot instantiate Enums"));
-        qmlRegisterType<NetworkStatus>(uri, 0, 1, "NetworkStatus");
-        qmlRegisterType<Handler>(uri, 0, 1, "Handler");
-        qmlRegisterType<NetworkModel>(uri, 0, 1, "NetworkModel");
-        qmlRegisterType<AppletProxyModel>(uri, 0, 1, "AppletProxyModel");
+        qmlRegisterType<NetworkStatus>(uri, 1, 0, "NetworkStatus");
+        qmlRegisterType<Handler>(uri, 1, 0, "Handler");
+        qmlRegisterType<NetworkModel>(uri, 1, 0, "NetworkModel");
+        qmlRegisterType<AppletProxyModel>(uri, 1, 0, "AppletProxyModel");
     }
 };
 

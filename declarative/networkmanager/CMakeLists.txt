@@ -44,6 +44,6 @@ target_link_libraries(nmplugin
                       KF5::ModemManagerQt)
 
 install(FILES qmldir plugins.qmltypes
-    DESTINATION ${QML_INSTALL_DIR}/org/hawaiios/networkmanager)
+        DESTINATION ${QML_INSTALL_DIR}/Hawaii/NetworkManager)
 install(TARGETS nmplugin
-    DESTINATION ${QML_INSTALL_DIR}/org/hawaiios/networkmanager)
+        DESTINATION ${QML_INSTALL_DIR}/Hawaii/NetworkManager)

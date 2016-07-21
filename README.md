@@ -21,6 +21,7 @@ This library includes:
  * A QML wrapper around KWallet
  * A QML plugin to access storage devices and batteries
  * A QML plugin for freedesktop.org notification servers
+ * A QML plugin for MPRIS2 clients
 
 ## Dependencies
 
@@ -84,3 +85,7 @@ to learn how to enable them.
 
  * Notifications QML plugin:
    * **hawaii.qml.notifications:** Notifications service.
+
+ * MPRIS2 QML plugin:
+   * **hawaii.qml.mpris2:** MPRIS2 engine
+   * **hawaii.qml.mpris2.player:** MPRIS2 player interface

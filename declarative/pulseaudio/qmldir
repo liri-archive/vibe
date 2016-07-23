@@ -1,0 +1,3 @@
+module Hawaii.PulseAudio
+plugin pulseaudioplugin
+classname PulseAudioPlugin

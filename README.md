@@ -38,6 +38,7 @@ The following modules and their dependencies are required:
  * [solid](http://quickgit.kde.org/?p=solid.git)
  * [networkmanager-qt](http://quickgit.kde.org/?p=networkmanager-qt.git)
  * [modemmanager-qt](http://quickgit.kde.org/?p=modemmanager-qt.git)
+ * [pulseadio >= 5.0.0](https://cgit.freedesktop.org/pulseaudio/pulseaudio/)
 
 ## Installation
 

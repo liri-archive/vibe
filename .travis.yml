@@ -9,6 +9,7 @@ arch:
     - solid
     - networkmanager-qt
     - modemmanager-qt
+    - pulseaudio
     - xorg-server-xvfb
     - git
   script:

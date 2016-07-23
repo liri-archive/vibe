@@ -49,6 +49,10 @@ endif()
 # gio (for the GSettings Qt wrapper)
 pkg_check_modules(gio gio-2.0 REQUIRED)
 
+# Find PulseAudio
+find_package(PulseAudio 5.0.0 REQUIRED)
+find_package(GLIB2 REQUIRED)
+
 # Find Qt5
 set(REQUIRED_QT_VERSION "5.6.0")
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED COMPONENTS

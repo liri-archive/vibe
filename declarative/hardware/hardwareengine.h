@@ -27,8 +27,8 @@
 #ifndef HARDWAREENGINE_H
 #define HARDWAREENGINE_H
 
-#include <QtCore/QObject>
 #include <QtCore/QLoggingCategory>
+#include <QtCore/QObject>
 #include <QtQml/QQmlListProperty>
 
 #include "battery.h"
@@ -39,12 +39,15 @@ Q_DECLARE_LOGGING_CATEGORY(HARDWARE)
 class HardwareEngine : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(Battery *primaryBattery READ primaryBattery NOTIFY batteriesChanged)
     Q_PROPERTY(QQmlListProperty<Battery> batteries READ batteries NOTIFY batteriesChanged)
-    Q_PROPERTY(QQmlListProperty<StorageDevice> storageDevices READ storageDevices NOTIFY storageDevicesChanged)
+    Q_PROPERTY(QQmlListProperty<StorageDevice> storageDevices READ storageDevices NOTIFY
+                       storageDevicesChanged)
 public:
     HardwareEngine(QObject *parent = 0);
     ~HardwareEngine();
 
+    Battery *primaryBattery() const;
     QQmlListProperty<Battery> batteries();
     QQmlListProperty<StorageDevice> storageDevices();
 

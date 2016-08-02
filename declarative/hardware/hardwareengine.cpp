@@ -31,8 +31,7 @@
 
 Q_LOGGING_CATEGORY(HARDWARE, "hawaii.qml.hardware")
 
-HardwareEngine::HardwareEngine(QObject *parent)
-    : QObject(parent)
+HardwareEngine::HardwareEngine(QObject *parent) : QObject(parent)
 {
     // Populate list as devices come and go
     Solid::DeviceNotifier *notifier = Solid::DeviceNotifier::instance();
@@ -72,7 +71,7 @@ HardwareEngine::HardwareEngine(QObject *parent)
 
     // Add already existing devices
     qCDebug(HARDWARE) << "Populate initial devices list";
-    for (const Solid::Device &device: Solid::Device::allDevices()) {
+    for (const Solid::Device &device : Solid::Device::allDevices()) {
         if (device.as<Solid::Battery>()) {
             Battery *battery = new Battery(device.udi());
             m_batteries[device.udi()] = battery;
@@ -91,6 +90,16 @@ HardwareEngine::~HardwareEngine()
 {
     qDeleteAll(m_storageDevices);
     m_storageDevices.clear();
+}
+
+Battery *HardwareEngine::primaryBattery() const
+{
+    Q_FOREACH (Battery *battery, m_batteries) {
+        if (battery->type() == Battery::PrimaryBattery)
+            return battery;
+    }
+
+    return nullptr;
 }
 
 QQmlListProperty<Battery> HardwareEngine::batteries()

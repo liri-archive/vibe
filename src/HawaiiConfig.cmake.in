@@ -1,6 +1,8 @@
 @PACKAGE_INIT@
 
 find_dependency(Qt5Core @QT_MIN_VERSION@)
+find_dependency(Qt5DBus @QT_MIN_VERSION@)
+find_dependency(Qt5Gui @QT_MIN_VERSION@)
 find_dependency(Qt5Qml @QT_MIN_VERSION@)
 find_dependency(KF5Wallet @KF5_MIN_VERSION@)
 

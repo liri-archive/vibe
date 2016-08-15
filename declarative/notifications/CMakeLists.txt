@@ -1,5 +1,6 @@
 include_directories(
     ${CMAKE_BINARY_DIR}/headers
+    ${CMAKE_BINARY_DIR}/src/core/Hawaii
 )
 
 set(SOURCES
@@ -20,7 +21,8 @@ target_link_libraries(notificationsplugin
                       Qt5::DBus
                       Qt5::Gui
                       Qt5::Qml
-                      Qt5::Quick)
+                      Qt5::Quick
+                      Hawaii::Core)
 
 install(FILES qmldir plugins.qmltypes
     DESTINATION ${QML_INSTALL_DIR}/Hawaii/Notifications)

@@ -1,13 +1,17 @@
 include_directories(
     ${CMAKE_BINARY_DIR}/headers
     ${CMAKE_CURRENT_BINARY_DIR}
+    ${Qt5Core_PRIVATE_INCLUDE_DIRS}
 )
 
 add_definitions(-DQT_NO_KEYWORDS)
 
 set(SOURCES
+    notification.cpp
     qobjectlistmodel.cpp
 )
+
+qt5_add_dbus_interfaces(SOURCES ${CMAKE_SOURCE_DIR}/declarative/notifications/org.freedesktop.Notifications.xml)
 
 add_library(HawaiiCore SHARED ${SOURCES})
 add_library(Hawaii::Core ALIAS HawaiiCore)
@@ -15,6 +19,8 @@ add_library(Hawaii::Core ALIAS HawaiiCore)
 target_link_libraries(HawaiiCore
     PUBLIC
         Qt5::Core
+        Qt5::DBus
+        Qt5::Gui
         Qt5::Qml
 )
 
@@ -33,6 +39,7 @@ ecm_generate_headers(HawaiiCore_CamelCase_HEADERS
   HEADER_NAMES
     QQuickList
     QObjectListModel
+    Notification
   PREFIX
     Core
   REQUIRED_HEADERS
@@ -52,6 +59,7 @@ install(
       ${HawaiiCore_HEADERS}
       qquicklist.h
       qobjectlistmodel.h
+      notification.h
     DESTINATION
       ${HAWAII_INCLUDEDIR}/core
     COMPONENT

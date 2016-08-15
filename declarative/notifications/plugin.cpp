@@ -26,6 +26,8 @@
 
 #include <QtQml/QtQml>
 
+#include <Hawaii/Core/Notification>
+
 #include "notifications.h"
 #include "notificationsimageprovider.h"
 
@@ -44,6 +46,7 @@ public:
             engine->addImageProvider(QStringLiteral("notifications"), new NotificationsImageProvider(notifications->daemon()));
             return static_cast<QObject *>(notifications);
         });
+        qmlRegisterType<Hawaii::Notification>(uri, 1, 0, "Notification");
     }
 };
 

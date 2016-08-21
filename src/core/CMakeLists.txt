@@ -7,6 +7,8 @@ include_directories(
 add_definitions(-DQT_NO_KEYWORDS)
 
 set(SOURCES
+    desktopfile.cpp
+    desktopfileaction.cpp
     notification.cpp
     qobjectlistmodel.cpp
 )
@@ -22,6 +24,7 @@ target_link_libraries(HawaiiCore
         Qt5::DBus
         Qt5::Gui
         Qt5::Qml
+        Qt5Xdg
 )
 
 ##############################################################################
@@ -37,9 +40,11 @@ set_target_properties(HawaiiCore PROPERTIES
 
 ecm_generate_headers(HawaiiCore_CamelCase_HEADERS
   HEADER_NAMES
+    DesktopFile
+    DesktopFileAction
+    Notification
     QQuickList
     QObjectListModel
-    Notification
   PREFIX
     Core
   REQUIRED_HEADERS
@@ -57,9 +62,11 @@ install(
     FILES
       ${CMAKE_CURRENT_BINARY_DIR}/Hawaii/core/hawaii_core_export.h
       ${HawaiiCore_HEADERS}
+      desktopfile.h
+      desktopfileaction.h
+      notification.h
       qquicklist.h
       qobjectlistmodel.h
-      notification.h
     DESTINATION
       ${HAWAII_INCLUDEDIR}/core
     COMPONENT

@@ -63,6 +63,9 @@ set(REQUIRED_KF5_VERSION "5.8.0")
 find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS
              Wallet Solid NetworkManagerQt ModemManagerQt)
 
+# Find Qt5Xdg
+find_package(QT5XDG REQUIRED)
+
 # Subdirectories
 add_subdirectory(headers)
 add_subdirectory(src)

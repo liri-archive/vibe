@@ -27,11 +27,11 @@
 #ifndef BATTERY_H
 #define BATTERY_H
 
-#include <QtCore/QObject>
 #include <QtCore/QLoggingCategory>
-
-#include <Solid/Device>
+#include <QtCore/QObject>
+#include <QtCore/QUrl>
 #include <Solid/Battery>
+#include <Solid/Device>
 
 Q_DECLARE_LOGGING_CATEGORY(BATTERY)
 
@@ -40,8 +40,11 @@ class Battery : public QObject
     Q_OBJECT
     Q_PROPERTY(QString udi READ udi CONSTANT)
     Q_PROPERTY(QString name READ name CONSTANT)
+    Q_PROPERTY(QString summary READ summary NOTIFY summaryChanged)
     Q_PROPERTY(QString iconName READ iconName CONSTANT)
+    Q_PROPERTY(QString chargeIconName READ chargeIconName NOTIFY chargeIconNameChanged)
     Q_PROPERTY(Type type READ type CONSTANT)
+    Q_PROPERTY(bool mouse READ isMouse CONSTANT)
     Q_PROPERTY(Technology technology READ technology CONSTANT)
     Q_PROPERTY(int chargePercent READ chargePercent NOTIFY chargePercentChanged)
     Q_PROPERTY(int capacity READ capacity NOTIFY capacityChanged)
@@ -62,7 +65,8 @@ class Battery : public QObject
     Q_PROPERTY(QString serial READ serial CONSTANT)
     Q_ENUMS(Type Technology ChargeState)
 public:
-    enum Type {
+    enum Type
+    {
         UnknownBattery,
         PdaBattery,
         UpsBattery,
@@ -75,7 +79,8 @@ public:
         MonitorBattery
     };
 
-    enum Technology {
+    enum Technology
+    {
         UnknownTechnology,
         LithiumIon,
         LithiumPolymer,
@@ -85,7 +90,8 @@ public:
         NickelMetalHydride
     };
 
-    enum ChargeState {
+    enum ChargeState
+    {
         Stable,
         Charging,
         Discharging,
@@ -97,9 +103,12 @@ public:
 
     QString udi() const;
     QString name() const;
+    QString summary() const;
     QString iconName() const;
+    QString chargeIconName() const;
 
     Type type() const;
+    bool isMouse() const;
     Technology technology() const;
 
     int chargePercent() const;
@@ -128,6 +137,8 @@ public:
     QString serial() const;
 
 Q_SIGNALS:
+    void summaryChanged();
+    void chargeIconNameChanged();
     void chargePercentChanged();
     void capacityChanged();
     void powerSupplyChanged();

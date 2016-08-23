@@ -66,6 +66,8 @@ find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS
 # Find Qt5Xdg
 find_package(QT5XDG REQUIRED)
 
+find_package(Fluid REQUIRED)
+
 # Subdirectories
 add_subdirectory(headers)
 add_subdirectory(src)

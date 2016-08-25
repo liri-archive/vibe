@@ -40,6 +40,7 @@ class HAWAIICORE_EXPORT DesktopFile : public QObject
 
     Q_PROPERTY(QString name READ name NOTIFY dataChanged)
     Q_PROPERTY(QString iconName READ iconName NOTIFY dataChanged)
+    Q_PROPERTY(QString genericName READ genericName NOTIFY dataChanged)
     Q_PROPERTY(bool hasIcon READ hasIcon NOTIFY dataChanged)
     Q_PROPERTY(QString comment READ comment NOTIFY dataChanged)
     Q_PROPERTY(QList<DesktopFileAction *> actions READ actions NOTIFY dataChanged)
@@ -55,6 +56,7 @@ public:
     explicit DesktopFile(QString path = "", QObject *parent = 0);
 
     QString name() const;
+    QString genericName() const;
     QString iconName() const;
     bool hasIcon() const;
     QString comment() const;

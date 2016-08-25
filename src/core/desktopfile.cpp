@@ -133,6 +133,11 @@ void DesktopFile::load()
 
 QString DesktopFile::name() const { return m_desktopFile ? m_desktopFile->name() : QString(); }
 
+QString DesktopFile::genericName() const
+{
+    return m_desktopFile ? m_desktopFile->localizedValue("GenericName").toString() : QString();
+}
+
 QString DesktopFile::iconName() const
 {
     return m_desktopFile ? m_desktopFile->iconName() : QString();

@@ -73,53 +73,110 @@ Battery::Battery(const QString &udi, QObject *parent)
             [this](double, const QString &) { Q_EMIT temperatureChanged(); });
 }
 
-Battery::~Battery() { qCDebug(BATTERY) << "Removed battery" << m_device.udi(); }
+Battery::~Battery()
+{
+    qCDebug(BATTERY) << "Removed battery" << m_device.udi();
+}
 
-QString Battery::udi() const { return m_device.udi(); }
+QString Battery::udi() const
+{
+    return m_device.udi();
+}
 
-Battery::Type Battery::type() const { return static_cast<Battery::Type>(m_battery->type()); }
+Battery::Type Battery::type() const
+{
+    return static_cast<Battery::Type>(m_battery->type());
+}
 
 Battery::Technology Battery::technology() const
 {
     return static_cast<Battery::Technology>(m_battery->technology());
 }
 
-int Battery::chargePercent() const { return m_battery->chargePercent(); }
+int Battery::chargePercent() const
+{
+    return m_battery->chargePercent();
+}
 
-int Battery::capacity() const { return m_battery->capacity(); }
+int Battery::capacity() const
+{
+    return m_battery->capacity();
+}
 
-bool Battery::isRechargeable() const { return m_battery->isRechargeable(); }
+bool Battery::isRechargeable() const
+{
+    return m_battery->isRechargeable();
+}
 
-bool Battery::isPowerSupply() const { return m_battery->isPowerSupply(); }
+bool Battery::isPowerSupply() const
+{
+    return m_battery->isPowerSupply();
+}
 
 Battery::ChargeState Battery::chargeState() const
 {
     return static_cast<Battery::ChargeState>(m_battery->chargeState());
 }
 
-qlonglong Battery::timeToEmpty() const { return m_battery->timeToEmpty(); }
+qlonglong Battery::timeToEmpty() const
+{
+    return m_battery->timeToEmpty();
+}
 
-qlonglong Battery::timeToFull() const { return m_battery->timeToFull(); }
+qlonglong Battery::timeToFull() const
+{
+    return m_battery->timeToFull();
+}
 
-double Battery::energy() const { return m_battery->energy(); }
+double Battery::energy() const
+{
+    return m_battery->energy();
+}
 
-double Battery::energyRate() const { return m_battery->energyRate(); }
+double Battery::energyRate() const
+{
+    return m_battery->energyRate();
+}
 
-double Battery::voltage() const { return m_battery->voltage(); }
+double Battery::voltage() const
+{
+    return m_battery->voltage();
+}
 
-double Battery::temperature() const { return m_battery->temperature(); }
+double Battery::temperature() const
+{
+    return m_battery->temperature();
+}
 
-bool Battery::isRecalled() const { return m_battery->isRecalled(); }
+bool Battery::isRecalled() const
+{
+    return m_battery->isRecalled();
+}
 
-QString Battery::recallVendor() const { return m_battery->recallVendor(); }
+QString Battery::recallVendor() const
+{
+    return m_battery->recallVendor();
+}
 
-QUrl Battery::recallUrl() const { return QUrl(m_battery->recallUrl()); }
+QUrl Battery::recallUrl() const
+{
+    return QUrl(m_battery->recallUrl());
+}
 
-QString Battery::vendor() const { return m_device.vendor(); }
+QString Battery::vendor() const
+{
+    return m_device.vendor();
+}
 
-QString Battery::product() const { return m_device.product(); }
+QString Battery::product() const
+{
+    return m_device.product();
+}
 
-QString Battery::serial() const { return m_battery->serial(); }
+QString Battery::serial() const
+{
+    return m_battery->serial();
+}
 
 QString Battery::chargeIconName() const
 {
@@ -184,12 +241,10 @@ QString Battery::summary() const
 
     if (chargeState() == Battery::Charging) {
         return QStringLiteral("%1 until full")
-                .arg(DateUtils::formatDuration(timeToFull() * 1000, DateUtils::Short,
-                                               DateUtils::Minutes));
+            .arg(formatter.formatDuration(timeToFull() * 1000, KFormat::HideSeconds));
     } else if (chargeState() == Battery::Discharging && timeToEmpty() != 0) {
         return QStringLiteral("%1 remaining")
-                .arg(DateUtils::formatDuration(timeToEmpty() * 1000, DateUtils::Short,
-                                               DateUtils::Minutes));
+            .arg(formatter.formatDuration(timeToEmpty() * 1000, KFormat::HideSeconds));
     } else if (chargeState() == Battery::FullyCharged) {
         return "Fully Charged";
     } else {
@@ -199,7 +254,7 @@ QString Battery::summary() const
 
 bool Battery::isMouse() const
 {
-    return type() == Battery::MouseBattery || type() == Battery::KeyboardMouseBattery ||
-           m_device.description().toLower().indexOf("mouse") != -1 ||
-           product().toLower().indexOf("mouse") != -1;
+    return type() == Battery::MouseBattery || type() == Battery::KeyboardMouseBattery
+        || m_device.description().toLower().indexOf("mouse") != -1
+        || product().toLower().indexOf("mouse") != -1;
 }

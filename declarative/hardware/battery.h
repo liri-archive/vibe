@@ -32,6 +32,7 @@
 #include <QtCore/QUrl>
 #include <Solid/Battery>
 #include <Solid/Device>
+#include <Hawaii/Core/KFormat>
 
 Q_DECLARE_LOGGING_CATEGORY(BATTERY)
 
@@ -65,8 +66,7 @@ class Battery : public QObject
     Q_PROPERTY(QString serial READ serial CONSTANT)
     Q_ENUMS(Type Technology ChargeState)
 public:
-    enum Type
-    {
+    enum Type {
         UnknownBattery,
         PdaBattery,
         UpsBattery,
@@ -79,8 +79,7 @@ public:
         MonitorBattery
     };
 
-    enum Technology
-    {
+    enum Technology {
         UnknownTechnology,
         LithiumIon,
         LithiumPolymer,
@@ -90,13 +89,7 @@ public:
         NickelMetalHydride
     };
 
-    enum ChargeState
-    {
-        Stable,
-        Charging,
-        Discharging,
-        FullyCharged
-    };
+    enum ChargeState { Stable, Charging, Discharging, FullyCharged };
 
     Battery(const QString &udi, QObject *parent = 0);
     ~Battery();
@@ -153,6 +146,7 @@ Q_SIGNALS:
 private:
     Solid::Device m_device;
     Solid::Battery *m_battery;
+    KFormat formatter;
 };
 
 #endif // BATTERY_H

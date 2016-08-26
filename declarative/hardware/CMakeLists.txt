@@ -1,3 +1,8 @@
+include_directories(
+    ${CMAKE_BINARY_DIR}/src/core
+    ${CMAKE_BINARY_DIR}/src/core/Hawaii
+)
+
 set(SOURCES
     hardwareengine.cpp
     battery.cpp
@@ -10,7 +15,7 @@ target_link_libraries(hardwareplugin
                       Qt5::Core
                       Qt5::Qml
                       KF5::Solid
-                      Fluid)
+                      Hawaii::Core)
 
 install(FILES qmldir plugins.qmltypes
     DESTINATION ${QML_INSTALL_DIR}/Hawaii/Hardware)

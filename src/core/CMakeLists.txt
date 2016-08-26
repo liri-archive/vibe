@@ -9,6 +9,8 @@ add_definitions(-DQT_NO_KEYWORDS)
 set(SOURCES
     desktopfile.cpp
     desktopfileaction.cpp
+    kformat.cpp
+    kformatprivate.cpp
     notification.cpp
     qobjectlistmodel.cpp
 )
@@ -45,6 +47,7 @@ ecm_generate_headers(HawaiiCore_CamelCase_HEADERS
     Notification
     QQuickList
     QObjectListModel
+    KFormat
   PREFIX
     Core
   REQUIRED_HEADERS
@@ -67,6 +70,7 @@ install(
       notification.h
       qquicklist.h
       qobjectlistmodel.h
+      kformat.h
     DESTINATION
       ${HAWAII_INCLUDEDIR}/core
     COMPONENT

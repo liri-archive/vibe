@@ -1,5 +1,5 @@
 include(GenerateExportHeader)
-include(ECMPackageConfigHelpers)
+include(CMakePackageConfigHelpers)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 
@@ -12,9 +12,9 @@ set(HAWAII_INCLUDEDIR "${CMAKE_INSTALL_INCLUDEDIR}/Hawaii")
 
 set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/Hawaii")
 
-ecm_configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/HawaiiConfig.cmake.in"
-                                  "${CMAKE_CURRENT_BINARY_DIR}/HawaiiConfig.cmake"
-                                  INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR})
+configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/HawaiiConfig.cmake.in"
+                              "${CMAKE_CURRENT_BINARY_DIR}/HawaiiConfig.cmake"
+                              INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR})
 
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/HawaiiConfig.cmake"
               "${CMAKE_CURRENT_BINARY_DIR}/HawaiiConfigVersion.cmake"

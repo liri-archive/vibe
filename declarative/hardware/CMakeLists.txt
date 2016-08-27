@@ -15,6 +15,7 @@ target_link_libraries(hardwareplugin
                       Qt5::Core
                       Qt5::Qml
                       KF5::Solid
+                      Fluid::Fluid
                       Hawaii::Core)
 
 install(FILES qmldir plugins.qmltypes

@@ -22,6 +22,7 @@ This library includes:
  * A QML plugin to access storage devices and batteries
  * A QML plugin for freedesktop.org notification servers
  * A QML plugin for MPRIS2 clients
+ * A QML plugin for PolicyKit agents.
 
 ## Dependencies
 
@@ -38,6 +39,7 @@ The following modules and their dependencies are required:
  * [solid](http://quickgit.kde.org/?p=solid.git)
  * [networkmanager-qt](http://quickgit.kde.org/?p=networkmanager-qt.git)
  * [modemmanager-qt](http://quickgit.kde.org/?p=modemmanager-qt.git)
+ * [polkit-qt5](http://quickgit.kde.org/?p=polkit-qt-1.git)
  * [pulseadio >= 5.0.0](https://cgit.freedesktop.org/pulseaudio/pulseaudio/)
 
 ## Installation
@@ -95,3 +97,6 @@ to learn how to enable them.
 
  * Network QML plugin:
    * **hawaii.qml.networkmanager:** NetworkManager support.
+
+ * PolicyKit QML plugin:
+   * **hawaii.qml.policykit:** PolicyKit agent.

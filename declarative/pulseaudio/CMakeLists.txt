@@ -16,7 +16,12 @@ target_link_libraries(pulseaudioplugin
                       Qt5::Qml
                       QPulseAudioPrivate)
 
-install(FILES qmldir
+set(FILES
+    qmldir
+    VolumeControl.qml
+)
+
+install(FILES ${FILES}
         DESTINATION ${QML_INSTALL_DIR}/Hawaii/PulseAudio)
 install(TARGETS pulseaudioplugin
         DESTINATION ${QML_INSTALL_DIR}/Hawaii/PulseAudio)

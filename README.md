@@ -34,6 +34,7 @@ Qt >= 5.6.0 with at least the following modules is required:
 The following modules and their dependencies are required:
 
  * [ECM >= 1.7.0](http://quickgit.kde.org/?p=extra-cmake-modules.git)
+ * [fluid](https://github.com/qmlos/fluid.git)
  * [glib >= 2.31.0](https://git.gnome.org/browse/glib)
  * [kwallet](http://quickgit.kde.org/?p=kwallet.git)
  * [solid](http://quickgit.kde.org/?p=solid.git)

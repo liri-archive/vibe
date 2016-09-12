@@ -9,6 +9,7 @@ sudo: required
 arch:
   packages:
     - qt5-declarative
+    - qt5-quickcontrols2
     - extra-cmake-modules
     - kwallet
     - solid

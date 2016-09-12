@@ -1,0 +1,29 @@
+{
+  "package": {
+    "name": "libqmlos",
+    "repo": "ci",
+    "subject": "qmlos",
+    "desc": "A collection of core classes used throughout qmlOS",
+    "website_url": "https://github.com/qmlos",
+    "issue_tracker_url": "https://github.com/qmlos/libqmlos",
+    "vcs_url": "https://github.com/qmlos/libqmlos",
+    "licenses": ["LGPL-3.0"],
+    "labels": ["qt", "qml"]
+  },
+  "version": {
+    "name": "latest_build",
+    "desc": "Continuous integration build",
+    "released": "@TODAY@",
+    "vcs_tag": "@GITREV@",
+    "attributes": [
+      {"name": "gitrevision", "values": ["@GITREV@"], "type": "string"},
+      {"name": "gitdate", "values": ["@GITDATE@"], "type": "date"}
+    ],
+    "gpgSign": false
+  },
+  "files": [
+    {"includePattern": "build/(libqmlos-gcc.tar.xz)", "uploadPattern": "$1"},
+    {"includePattern": "build/(libqmlos-clang.tar.xz)", "uploadPattern": "$1"}
+  ],
+  "publish": true
+}

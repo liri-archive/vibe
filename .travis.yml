@@ -20,6 +20,7 @@ arch:
     - git
     - clang
   script:
+    - curl -L "https://dl.bintray.com/qmlos/ci/fluid-$CC.tar.xz" | sudo tar xJf - -C /
     - if [ "$CC" = "gcc" ]; then cmake . -DKDE_INSTALL_USE_QT_SYS_PATHS=ON -DCMAKE_INSTALL_PREFIX=/usr; fi
     - if [ "$CC" = "clang" ]; then cmake . -DKDE_INSTALL_USE_QT_SYS_PATHS=ON -DCMAKE_INSTALL_PREFIX=/usr; fi
     - make

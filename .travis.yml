@@ -15,6 +15,7 @@ arch:
     - networkmanager-qt
     - modemmanager-qt
     - pulseaudio
+    - libqtxdg
     - xorg-server-xvfb
     - git
     - clang

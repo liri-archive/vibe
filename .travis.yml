@@ -18,6 +18,7 @@ arch:
     - modemmanager-qt
     - pulseaudio
     - libqtxdg
+    - fluid-git
     - xorg-server-xvfb
     - clang
     #- clazy-git

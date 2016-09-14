@@ -18,7 +18,6 @@ arch:
     - pulseaudio
     - libqtxdg
     - xorg-server-xvfb
-    - git
     - clang
   script:
     - curl -L "https://dl.bintray.com/qmlos/ci/fluid-$CC.tar.xz" | sudo tar xJf - -C /

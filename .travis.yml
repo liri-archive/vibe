@@ -7,9 +7,10 @@ compiler:
 sudo: required
 
 arch:
+  repos:
+    - fluid=https://dl.bintray.com/qmlos/archlinux-develop/$arch/
   packages:
     - qt5-declarative
-    - qt5-quickcontrols2
     - extra-cmake-modules
     - kwallet
     - solid
@@ -19,9 +20,10 @@ arch:
     - libqtxdg
     - xorg-server-xvfb
     - clang
+    #- clazy-git
   script:
-    - curl -L "https://dl.bintray.com/qmlos/ci/fluid-$CC.tar.xz" | sudo tar xJf - -C /
     - if [ "$CC" = "gcc" ]; then cmake . -DKDE_INSTALL_USE_QT_SYS_PATHS=ON -DCMAKE_INSTALL_PREFIX=/usr -DKDE_INSTALL_LIBDIR=lib; fi
+    #- if [ "$CC" = "clang" ]; then env CLAZY_CHECKS="level1" cmake . -DCMAKE_CXX_COMPILER=clazy -DKDE_INSTALL_USE_QT_SYS_PATHS=ON -DCMAKE_INSTALL_PREFIX=/usr; fi
     - if [ "$CC" = "clang" ]; then cmake . -DKDE_INSTALL_USE_QT_SYS_PATHS=ON -DCMAKE_INSTALL_PREFIX=/usr -DKDE_INSTALL_LIBDIR=lib; fi
     - make
     - sudo make install
@@ -32,10 +34,13 @@ script:
   - "curl -s https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh | bash"
 
 deploy:
-  on: develop
   provider: bintray
-  file: build/bintray.json
-  user: plfiorini
+  on:
+    branch: develop
+    condition: "$CC = gcc"
+  file: cibuild/bintray.json
+  user:
+    secure: Hoq9tF+DPR/UYgKmVstrn/LaBycL8cI+AKk+8Vsw1FjoNddW/dTNJ5GmHBVPi3VdTO3cgjqk/5T0CxFO6aMD6noBlDPdIUNJb92cuFjqqn9RcQ3+1HibMqjHhUTLnXeTEN3vXj01JTd9GAS+cETh+YUwVyN4VoDrDe2VcYSopC8S2G1mi3wtnxxiOq1+hzO7Hua+Gy/qbAm5MgTdl2glrSbAdk5nI/900nrH3KJMYe7Ofs0zUB/f+eGlT52muYeyMnVZdBW6ukXN0HRPrGHXeLagDWC0fxdpsbfkvqQ2Kzrf3cr9yL4K7hVEQ/pP2e18ujX2Y9hoz1ZyAUC3TOqwVCwAJGGjuRUtGDO4wpClO8irExWDQsC4gqAPvoSPyD6nXxa8LeyVhEbNE7HqZsUPspBRUXf9Eam74DhRaYVTWrBV4Aasd7nP+6fwyU2cvsNmAEMprOhwaGS33d1A9BujQzYoYSPvur5DsK/1iPpvIx1yTItR3tg+JYEmTWm6P2tl88sETTU3WuG4gv5qBzFWzcjjfBD7Nw5bYk8mpAYMYb8wAs2Me9ZXTkRcFzU3i1vcZh9kaOHm5OkV6WAhB+97YNOv9B7AKSgoh9iukzjuSGvaY5IcXQgRzVrahKZ+yUVYh3RlmpCdve2FoQwSGUhEsQ+ioQHsPgV8nkTnEOfS+N0=
   key:
     secure: H5pp2Sckx6XjSHUELeOTJjCZ1IrMf1yCKWzXRTn05xYbimkGachqbWqO9dMlganmZoP8m41xpwoRDDB3DV3hdMptwxxCS65zg4I7y9/VxZ+5PmU5R1PPQcR18bMBjfXMR5slKjc/ueg3TVuQCYCVD4K8VPbGeP+g636hUomtFp0SEjomZZMePFYAuZA/V8U6XeHJR4C/BLo+8gy7uFFgQZ2HFBl5X8S9pymKCuSQ8M0HpJkbpvy6Ma5GwTg79HC3ODXJ0xdFqaNQStrt8kFcNvsXCaYMBHwHgaEU3y6FZb490lDvHYyABrUn3m2Krn3E36dDRzvyLJNZX4JeGUo5EUpIvNFO+wq70ExqGTz6B/IL3Z3vPNRzF9JaZLkLeSfI3cpOfJEpuBpyNxgVAHBhtcL9QFl2KJu5e7ot9dES9sxZso5LTrOtlqxltnLVJohL46Q1MVcoDDv6Pm8Z6QPcls4lrVR8s+qWrVdUF6lwJZ0T5N/fosINfFoDTZntsMn6EvNsOAo1XPrQ0NKbEFrIdrYqs1wDCb4ndn9ItNFsT0H+Hy+0EgyHW/GKvIJBxZSRKt4bZc2uXXqpRA4/2t/3fezfqEQAq+OAqgjmBH+2+n2x81moRqudTGBA+L62CtZH2utiVGJQS/xaIWHX48UWEQG2B9MRUFrFWgin0HnHGaU=
 

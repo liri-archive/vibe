@@ -7,7 +7,7 @@ pkgdesc="A collection of core classes used throughout qmlOS"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url="https://github.com/qmlos"
 license=('LGPL3')
-depends=('qt5-base' 'qt5-declarative' 'kwallet' 'solid' 'networkmanager-qt'
+depends=('qt5-base' 'qt5-declarative' 'qt5-tools' 'kwallet' 'solid' 'networkmanager-qt'
          'modemmanager-qt' 'pulseaudio' 'libqtxdg' 'fluid-git')
 makedepends=('git' 'extra-cmake-modules')
 conflicts=('libhawaii' 'libhawaii-git' 'libqmlos')

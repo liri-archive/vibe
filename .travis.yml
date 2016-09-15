@@ -19,6 +19,7 @@ arch:
   repos:
     - fluid=https://dl.bintray.com/qmlos/archlinux-develop/$arch/
   packages:
+    - qt5-tools
     - qt5-declarative
     - extra-cmake-modules
     - kwallet

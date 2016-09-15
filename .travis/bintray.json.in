@@ -1,6 +1,6 @@
 {
   "package": {
-    "name": "libqmls",
+    "name": "libqmlos",
     "repo": "archlinux-@GITBRANCH@",
     "subject": "qmlos",
     "desc": "A collection of core classes used throughout qmlOS",

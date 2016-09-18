@@ -32,7 +32,11 @@ target_link_libraries(HawaiiCore
 
 generate_export_header(HawaiiCore EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/Hawaii/core/hawaii_core_export.h")
 
-target_include_directories(HawaiiCore INTERFACE "$<INSTALL_INTERFACE:${HAWAII_INCLUDEDIR}>")
+target_include_directories(HawaiiCore
+    INTERFACE
+        "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/Hawaii>"
+        "$<INSTALL_INTERFACE:${HAWAII_INCLUDEDIR}>"
+)
 
 set_target_properties(HawaiiCore PROPERTIES
                       VERSION ${PROJECT_VERSION}

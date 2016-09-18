@@ -1,7 +1,7 @@
 include_directories(
-    ${CMAKE_BINARY_DIR}/src
-    ${CMAKE_BINARY_DIR}/src/core
-    ${CMAKE_BINARY_DIR}/src/core/Hawaii
+    "${CMAKE_CURRENT_BINARY_DIR}/../../src"
+    "${CMAKE_CURRENT_BINARY_DIR}/../../src/core"
+    "${CMAKE_CURRENT_BINARY_DIR}/../../src/core/Hawaii"
 )
 
 add_definitions(

@@ -11,7 +11,7 @@ set_package_properties(MobileBroadbandProviderInfo PROPERTIES
 add_definitions(-DWITH_MODEMMANAGER_SUPPORT=1)
 
 include_directories(
-    ${CMAKE_BINARY_DIR}/headers
+    "${CMAKE_CURRENT_BINARY_DIR}/../../headers"
 )
 
 add_definitions(-DQT_NO_KEYWORDS)

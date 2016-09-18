@@ -1,6 +1,5 @@
 include_directories(
-    ${CMAKE_BINARY_DIR}/headers
-    ${CMAKE_CURRENT_BINARY_DIR}
+    "${CMAKE_CURRENT_BINARY_DIR}/../../headers"
     ${Qt5Core_PRIVATE_INCLUDE_DIRS}
 )
 
@@ -15,7 +14,7 @@ set(SOURCES
     qobjectlistmodel.cpp
 )
 
-qt5_add_dbus_interfaces(SOURCES ${CMAKE_SOURCE_DIR}/declarative/notifications/org.freedesktop.Notifications.xml)
+qt5_add_dbus_interfaces(SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/../../declarative/notifications/org.freedesktop.Notifications.xml")
 
 add_library(HawaiiCore SHARED ${SOURCES})
 add_library(Hawaii::Core ALIAS HawaiiCore)
@@ -31,7 +30,7 @@ target_link_libraries(HawaiiCore
 
 ##############################################################################
 
-generate_export_header(HawaiiCore EXPORT_FILE_NAME ${CMAKE_CURRENT_BINARY_DIR}/Hawaii/core/hawaii_core_export.h)
+generate_export_header(HawaiiCore EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/Hawaii/core/hawaii_core_export.h")
 
 target_include_directories(HawaiiCore INTERFACE "$<INSTALL_INTERFACE:${HAWAII_INCLUDEDIR}>")
 
@@ -53,7 +52,7 @@ ecm_generate_headers(HawaiiCore_CamelCase_HEADERS
   REQUIRED_HEADERS
     HawaiiCore_HEADERS
   OUTPUT_DIR
-    ${CMAKE_CURRENT_BINARY_DIR}/Hawaii
+    "${CMAKE_CURRENT_BINARY_DIR}/Hawaii"
 )
 install(FILES ${HawaiiCore_CamelCase_HEADERS}
         DESTINATION ${HAWAII_INCLUDEDIR}/Core
@@ -63,7 +62,7 @@ install(TARGETS HawaiiCore EXPORT HawaiiCoreTargets ${KDE_INSTALL_TARGETS_DEFAUL
 
 install(
     FILES
-      ${CMAKE_CURRENT_BINARY_DIR}/Hawaii/core/hawaii_core_export.h
+      "${CMAKE_CURRENT_BINARY_DIR}/Hawaii/core/hawaii_core_export.h"
       ${HawaiiCore_HEADERS}
       desktopfile.h
       desktopfileaction.h

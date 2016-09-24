@@ -38,7 +38,9 @@ const QMap<QString, QString> correctAppIds = {
         {"corebird", "org.baedert.corebird"},     {"dconf-editor", "ca.desrt.dconf-editor"},
         {"file-roller", "org.gnome.FileRoller"},  {"gnome-calendar", "org.gnome.Calendar"},
         {"gnome-disks", "org.gnome.DiskUtility"}, {"gnome-font-viewer", "org.gnome.font-viewer"},
-        {"nautilus", "org.gnome.Nautilus"},       {"org.kate-editor.kate", "org.kde.kate"}};
+        {"nautilus", "org.gnome.Nautilus"},       {"org.kate-editor.kate", "org.kde.kate"},
+        {"gedit", "org.gnome.gedit"},             {"gnome-dictionary", "org.gnome.Dictionary"}
+};
 
 DesktopFile::DesktopFile(QString path, QObject *parent)
     : QObject(parent)

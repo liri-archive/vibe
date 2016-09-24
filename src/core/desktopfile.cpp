@@ -78,7 +78,7 @@ QString DesktopFile::pathFromAppId(QString appId)
 
 QString DesktopFile::findFileInPaths(QString fileName, QStringList paths)
 {
-    for (QString path : paths) {
+    for (const QString &path : paths) {
         if (QFile::exists(path + "/" + fileName)) {
             return path + "/" + fileName;
         }

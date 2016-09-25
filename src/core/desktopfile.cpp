@@ -25,6 +25,7 @@
 #include "desktopfile.h"
 
 #include <QtCore/QDir>
+#include <QtCore/QDebug>
 #include <QtCore/QFile>
 #include <QtCore/QFileInfo>
 #include <QtCore/QStandardPaths>
@@ -105,7 +106,14 @@ void DesktopFile::setPath(QString path)
 
 void DesktopFile::load()
 {
+    if (m_path.isEmpty())
+        return;
+
     m_desktopFile = XdgDesktopFileCache::getFile(m_path);
+    if (!m_desktopFile) {
+        qWarning() << "Couldn't find desktop file" << m_path;
+        return;
+    }
 
     qDeleteAll(m_actions);
     m_actions.clear();

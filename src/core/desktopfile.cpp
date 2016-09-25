@@ -45,6 +45,7 @@ const QMap<QString, QString> correctAppIds = {
 
 DesktopFile::DesktopFile(QString path, QObject *parent)
     : QObject(parent)
+    , m_desktopFile(nullptr)
 {
     if (path.endsWith(".desktop"))
         setPath(path);

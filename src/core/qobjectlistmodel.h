@@ -130,7 +130,7 @@ public:
 
 protected:
     //! Emits the notifications of changes done on the underlying QObject properties
-    void timerEvent(QTimerEvent *ev);
+    void timerEvent(QTimerEvent *ev) Q_DECL_OVERRIDE;
 
 private:
     //! Updates the property tracking connections on given object.

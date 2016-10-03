@@ -448,7 +448,7 @@ void Handler::openEditor()
 
 void Handler::requestScan()
 {
-    Q_FOREACH (NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
+    Q_FOREACH (const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
             if (wifiDevice) {

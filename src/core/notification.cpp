@@ -322,8 +322,6 @@ Notification::Urgency Notification::urgency() const
 
 void Notification::setUrgency(Notification::Urgency urgency)
 {
-    Q_D(Notification);
-
     setHint(QLatin1String("urgency"), QString::number(int(urgency)));
 }
 
@@ -471,7 +469,7 @@ void Notification::close()
 {
     Q_D(Notification);
 
-    if (!d->replacesId != 0) {
+    if (d->replacesId != 0) {
         QDBusPendingCall call = d->iface->CloseNotification(d->replacesId);
         QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(call, this);
         connect(watcher, &QDBusPendingCallWatcher::finished, this, [&](QDBusPendingCallWatcher *self) {

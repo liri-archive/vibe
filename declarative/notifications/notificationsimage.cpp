@@ -91,7 +91,7 @@ QImage decodeImageHint(const QDBusArgument &arg)
             qWarning() << "Image data is incomplete. y:" << y << "height:" << height;
             break;
         }
-        function((QRgb *)image.scanLine(y), ptr, width);
+        function((QRgb *)(void *)image.scanLine(y), ptr, width);
     }
 
     return image;

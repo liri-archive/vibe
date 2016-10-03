@@ -1,5 +1,5 @@
-libQmlOS
-========
+Vibe
+====
 
 # Core Developers
 

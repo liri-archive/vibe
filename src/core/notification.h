@@ -1,5 +1,5 @@
 /*
- * This file is part of Hawaii.
+ * This file is part of Vibe.
  *
  * Copyright (C) 2016 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
  *
@@ -25,13 +25,13 @@
 
 #include <QtCore/QObject>
 
-#include <Hawaii/core/hawaii_core_export.h>
+#include <Vibe/core/vibe_core_export.h>
 
-namespace Hawaii {
+namespace Vibe {
 
 class NotificationPrivate;
 
-class HAWAIICORE_EXPORT Notification : public QObject
+class VIBECORE_EXPORT Notification : public QObject
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(Notification)
@@ -108,4 +108,4 @@ Q_SIGNALS:
     void closed(CloseReason reason);
 };
 
-} // namespace Hawaii
+} // namespace Vibe

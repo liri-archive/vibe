@@ -1,5 +1,5 @@
 /*
- * This file is part of Hawaii.
+ * This file is part of Vibe.
  *
  * Copyright (C) 2014 Bogdan Cuza <bogdan.cuza@hotmail.com>
  * Copyright (C) 2015-2016 Michael Spencer <sonrisesoftware@gmail.com>
@@ -26,15 +26,15 @@
 
 #include <QtCore/QObject>
 
-#include <Hawaii/core/hawaii_core_export.h>
+#include <Vibe/core/vibe_core_export.h>
 #include <qt5xdg/xdgdesktopfile.h>
 
 #include "desktopfileaction.h"
 
-namespace Hawaii
+namespace Vibe
 {
 
-class HAWAIICORE_EXPORT DesktopFile : public QObject
+class VIBECORE_EXPORT DesktopFile : public QObject
 {
     Q_OBJECT
 

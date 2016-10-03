@@ -1,5 +1,5 @@
 /*
- * libhawaii - A QML module and collection of classes used throughout Hawaii
+ * This file is part of Vibe.
  *
  * Copyright (C) 2016 Michael Spencer <sonrisesoftware@gmail.com>
  *

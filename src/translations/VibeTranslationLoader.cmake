@@ -1,16 +1,16 @@
 #.rst
-# Qt5TranslationLoader
-# --------------------
+# VibeTranslationLoader
+# ---------------------
 #
-# This module provides the ``hawaii_translation_loader`` function that
+# This module provides the ``vibe_translation_loader`` function that
 # generates C++ code to load translations for Qt applications and
 # libraries.
 #
 # ::
 #
-#   hawaii_translation_loader(<dest_var>
-#                             TRANSLATIONS_DIR <translations_dir>
-#                             CATALOG_NAME <catalog_name>)
+#   vibe_translation_loader(<dest_var>
+#                           TRANSLATIONS_DIR <translations_dir>
+#                           CATALOG_NAME <catalog_name>)
 #
 # Generates C++ code that installs the translation catalog <catalog_name>
 # from the <translations_dir> directory for Qt applications and libraries.
@@ -50,23 +50,23 @@
 
 include(CMakeParseArguments)
 
-function(hawaii_translation_loader destFiles)
+function(vibe_translation_loader destFiles)
     set(options "")
     set(oneValueArgs TRANSLATIONS_DIR CATALOG_NAME)
     set(multiValueArgs "")
     cmake_parse_arguments(ARGS "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
     if(NOT ARGS_TRANSLATIONS_DIR)
-        message(FATAL_ERROR "Missing TRANSLATIONS_DIR argument to hawaii_translation_loader")
+        message(FATAL_ERROR "Missing TRANSLATIONS_DIR argument to vibe_translation_loader")
     endif()
 
     if(NOT ARGS_CATALOG_NAME)
-        message(FATAL_ERROR "Missing CATALOG_NAME argument to hawaii_translation_loader")
+        message(FATAL_ERROR "Missing CATALOG_NAME argument to vibe_translation_loader")
     endif()
 
     configure_file(
-        ${HAWAII_CMAKE_MODULES_DIR}/HawaiiTranslationLoader.cpp.in
-        HawaiiTranslationLoader.cpp @ONLY
+        ${VIBE_CMAKE_MODULES_DIR}/VibeTranslationLoader.cpp.in
+        VibeTranslationLoader.cpp @ONLY
     )
-    set(${destFiles} ${${destFiles}} ${CMAKE_CURRENT_BINARY_DIR}/HawaiiTranslationLoader.cpp PARENT_SCOPE)
+    set(${destFiles} ${${destFiles}} ${CMAKE_CURRENT_BINARY_DIR}/VibeTranslationLoader.cpp PARENT_SCOPE)
 endfunction()

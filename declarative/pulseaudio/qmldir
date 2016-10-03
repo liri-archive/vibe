@@ -1,4 +1,4 @@
-module Hawaii.PulseAudio
+module Vibe.PulseAudio
 plugin pulseaudioplugin
 classname PulseAudioPlugin
 

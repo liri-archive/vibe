@@ -21,6 +21,6 @@ target_link_libraries(mpris2plugin
                       Qt5::Qml)
 
 install(FILES qmldir plugins.qmltypes
-        DESTINATION ${QML_INSTALL_DIR}/Hawaii/Mpris)
+        DESTINATION ${QML_INSTALL_DIR}/Vibe/Mpris)
 install(TARGETS mpris2plugin
-        DESTINATION ${QML_INSTALL_DIR}/Hawaii/Mpris)
+        DESTINATION ${QML_INSTALL_DIR}/Vibe/Mpris)

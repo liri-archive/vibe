@@ -1,5 +1,5 @@
 /****************************************************************************
- * This file is part of Hawaii.
+ * This file is part of Vibe.
  *
  * Copyright (C) 2016 Pier Luigi Fiorini
  *
@@ -50,8 +50,8 @@ class PulseAudioPlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri)
     {
-        // @uri Hawaii.PulseAudio
-        Q_ASSERT(uri == QLatin1String("Hawaii.PulseAudio"));
+        // @uri Vibe.PulseAudio
+        Q_ASSERT(uri == QLatin1String("Vibe.PulseAudio"));
 
         qmlRegisterSingletonType(uri, 1, 0, "PulseAudio", pulseaudioSingleton);
 

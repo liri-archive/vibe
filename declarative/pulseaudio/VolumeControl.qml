@@ -1,5 +1,5 @@
 /****************************************************************************
- * This file is part of Hawaii.
+ * This file is part of Vibe.
  *
  * Copyright (C) 2016 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
  *
@@ -23,7 +23,7 @@
 
 import QtQuick 2.0
 import Fluid.Core 1.0
-import Hawaii.PulseAudio 1.0
+import Vibe.PulseAudio 1.0
 
 Object {
     readonly property real from: 0

@@ -44,6 +44,6 @@ target_link_libraries(nmplugin
                       KF5::ModemManagerQt)
 
 install(FILES qmldir plugins.qmltypes
-        DESTINATION ${QML_INSTALL_DIR}/Hawaii/NetworkManager)
+        DESTINATION ${QML_INSTALL_DIR}/Vibe/NetworkManager)
 install(TARGETS nmplugin
-        DESTINATION ${QML_INSTALL_DIR}/Hawaii/NetworkManager)
+        DESTINATION ${QML_INSTALL_DIR}/Vibe/NetworkManager)

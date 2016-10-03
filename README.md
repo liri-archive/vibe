@@ -1,15 +1,15 @@
-libQmlOS
-========
+Vibe
+====
 
 [![ZenHub.io](https://img.shields.io/badge/supercharged%20by-zenhub.io-blue.svg)](https://zenhub.io)
 
 [![License](https://img.shields.io/badge/license-LGPLv3.0-blue.svg)](http://www.gnu.org/licenses/lgpl.txt)
-[![GitHub release](https://img.shields.io/github/release/qmlos/libqmlos.svg)](https://github.com/qmlos/libqmlos)
-[![Build Status](https://travis-ci.org/qmlos/libqmlos.svg?branch=develop)](https://travis-ci.org/qmlos/libqmlos)
-[![GitHub issues](https://img.shields.io/github/issues/qmlos/libqmlos.svg)](https://github.com/qmlos/libqmlos/issues)
-[![Maintained](https://img.shields.io/maintenance/yes/2016.svg)](https://github.com/qmlos/libqmlos/commits/develop)
+[![GitHub release](https://img.shields.io/github/release/lirios/vibe.svg)](https://github.com/lirios/vibe)
+[![Build Status](https://travis-ci.org/lirios/vibe.svg?branch=develop)](https://travis-ci.org/lirios/vibe)
+[![GitHub issues](https://img.shields.io/github/issues/lirios/vibe.svg)](https://github.com/lirios/vibe/issues)
+[![Maintained](https://img.shields.io/maintenance/yes/2016.svg)](https://github.com/lirios/vibe/commits/develop)
 
-A collection of core classes used throughout qmlOS.
+A collection of core classes used throughout Liri.
 
 ## Features
 
@@ -34,7 +34,7 @@ Qt >= 5.6.0 with at least the following modules is required:
 The following modules and their dependencies are required:
 
  * [ECM >= 1.7.0](http://quickgit.kde.org/?p=extra-cmake-modules.git)
- * [fluid](https://github.com/qmlos/fluid.git)
+ * [fluid](https://github.com/lirios/fluid.git)
  * [glib >= 2.31.0](https://git.gnome.org/browse/glib)
  * [kwallet](http://quickgit.kde.org/?p=kwallet.git)
  * [solid](http://quickgit.kde.org/?p=solid.git)
@@ -56,7 +56,7 @@ make install # use sudo if necessary
 
 On the `cmake` line, you can specify additional configuration parameters:
 
- * `-DCMAKE_INSTALL_PREFIX=/path/to/install` (for example, `/opt/qmlos` or `/usr`)
+ * `-DCMAKE_INSTALL_PREFIX=/path/to/install` (for example, `/opt/liri` or `/usr`)
  * `-DCMAKE_BUILD_TYPE=<build_type>`, where `<build_type>` is one of:
    * **Debug:** debug build
    * **Release:** release build
@@ -79,25 +79,25 @@ to learn how to enable them.
 ### Available categories
 
  * Library:
-   * **hawaii.qgsettings:** Qt GSettings wrapper
+   * **vibe.qgsettings:** Qt GSettings wrapper
 
  * Settings QML plugin:
-   * **hawaii.qml.settings:** Settings.
+   * **vibe.settings:** Settings.
 
  * Hardware QML plugin:
-   * **hawaii.qml.hardware:** Hardware service.
-   * **hawaii.qml.hardware.battery:** Battery information.
-   * **hawaii.qml.hardware.storagedevice:** Storage device information.
+   * **vibe.hardware:** Hardware service.
+   * **vibe.hardware.battery:** Battery information.
+   * **vibe.hardware.storagedevice:** Storage device information.
 
  * Notifications QML plugin:
-   * **hawaii.qml.notifications:** Notifications service.
+   * **vibe.notifications:** Notifications service.
 
  * MPRIS2 QML plugin:
-   * **hawaii.qml.mpris2:** MPRIS2 engine
-   * **hawaii.qml.mpris2.player:** MPRIS2 player interface
+   * **vibe.mpris2:** MPRIS2 engine
+   * **vibe.mpris2.player:** MPRIS2 player interface
 
  * Network QML plugin:
-   * **hawaii.qml.networkmanager:** NetworkManager support.
+   * **vibe.networkmanager:** NetworkManager support.
 
  * PolicyKit QML plugin:
-   * **hawaii.qml.policykit:** PolicyKit agent.
+   * **vibe.policykit:** PolicyKit agent.

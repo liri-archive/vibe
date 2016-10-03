@@ -22,6 +22,6 @@ set(FILES
 )
 
 install(FILES ${FILES}
-        DESTINATION ${QML_INSTALL_DIR}/Hawaii/PulseAudio)
+        DESTINATION ${QML_INSTALL_DIR}/Vibe/PulseAudio)
 install(TARGETS pulseaudioplugin
-        DESTINATION ${QML_INSTALL_DIR}/Hawaii/PulseAudio)
+        DESTINATION ${QML_INSTALL_DIR}/Vibe/PulseAudio)

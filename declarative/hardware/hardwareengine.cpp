@@ -1,5 +1,5 @@
 /****************************************************************************
-* This file is part of Hawaii.
+* This file is part of Vibe.
  *
  * Copyright (C) 2015-2016 Pier Luigi Fiorini
  *
@@ -29,7 +29,7 @@
 
 #include "hardwareengine.h"
 
-Q_LOGGING_CATEGORY(HARDWARE, "hawaii.qml.hardware")
+Q_LOGGING_CATEGORY(HARDWARE, "vibe.hardware")
 
 HardwareEngine::HardwareEngine(QObject *parent) : QObject(parent)
 {

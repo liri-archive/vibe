@@ -1,5 +1,5 @@
 /****************************************************************************
- * This file is part of Hawaii.
+ * This file is part of Vibe.
  *
  * Copyright (C) 2016 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
  *
@@ -26,7 +26,7 @@
 
 #include <QtTest/QtTest>
 
-#include <Hawaii/Core/QObjectListModel>
+#include <Vibe/Core/QObjectListModel>
 
 class CustomObject : public QObject
 {

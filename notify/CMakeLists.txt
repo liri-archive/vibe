@@ -1,6 +1,6 @@
 include_directories(
     "${CMAKE_CURRENT_BINARY_DIR}/../headers"
-    "${CMAKE_CURRENT_BINARY_DIR}/../src/core/Hawaii"
+    "${CMAKE_CURRENT_BINARY_DIR}/../src/core/Vibe"
 )
 
 set(SOURCES
@@ -8,7 +8,7 @@ set(SOURCES
 )
 
 add_executable(notify ${SOURCES})
-target_link_libraries(notify Hawaii::Core)
+target_link_libraries(notify Vibe::Core)
 
 install(TARGETS notify RUNTIME
         DESTINATION ${BIN_INSTALL_DIR})

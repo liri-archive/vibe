@@ -19,6 +19,6 @@ target_link_libraries(polkitplugin
                       ${POLKITQT-1_AGENT_LIBRARY})
 
 install(FILES qmldir plugins.qmltypes
-        DESTINATION ${QML_INSTALL_DIR}/Hawaii/PolicyKit)
+        DESTINATION ${QML_INSTALL_DIR}/Vibe/PolicyKit)
 install(TARGETS polkitplugin
-        DESTINATION ${QML_INSTALL_DIR}/Hawaii/PolicyKit)
+        DESTINATION ${QML_INSTALL_DIR}/Vibe/PolicyKit)

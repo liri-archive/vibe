@@ -1,5 +1,5 @@
 /****************************************************************************
- * This file is part of Hawaii.
+ * This file is part of Vibe.
  *
  * Copyright (C) 2015-2016 Pier Luigi Fiorini
  *
@@ -35,8 +35,8 @@ class HardwarePlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri)
     {
-        // @uri Hawaii.Hardware
-        Q_ASSERT(uri == QStringLiteral("Hawaii.Hardware"));
+        // @uri Vibe.Hardware
+        Q_ASSERT(uri == QStringLiteral("Vibe.Hardware"));
 
         qmlRegisterType<HardwareEngine>(uri, 1, 0, "HardwareEngine");
         qmlRegisterUncreatableType<Battery>(uri, 1, 0, "Battery",

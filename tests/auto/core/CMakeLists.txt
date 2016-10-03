@@ -1,7 +1,7 @@
 include_directories(
     "${CMAKE_CURRENT_BINARY_DIR}/../../src"
     "${CMAKE_CURRENT_BINARY_DIR}/../../src/core"
-    "${CMAKE_CURRENT_BINARY_DIR}/../../src/core/Hawaii"
+    "${CMAKE_CURRENT_BINARY_DIR}/../../src/core/Vibe"
 )
 
 add_definitions(
@@ -10,6 +10,6 @@ add_definitions(
 )
 
 add_executable(tst_qobjectlistmodel EXCLUDE_FROM_ALL tst_qobjectlistmodel.cpp)
-target_link_libraries(tst_qobjectlistmodel Qt5::Test Hawaii::Core)
+target_link_libraries(tst_qobjectlistmodel Qt5::Test Vibe::Core)
 add_test(tst_qobjectlistmodel tst_qobjectlistmodel)
 add_dependencies(check tst_qobjectlistmodel)

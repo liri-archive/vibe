@@ -1,20 +1,20 @@
 #.rst
-# HawaiiMacros
-# ------------
+# VibeTranslations
+# ----------------
 #
-# This module provides the ``hawaii_translate_ts`` and ``hawaii_translate_desktop``
+# This module provides the ``vibe_translate_ts`` and ``vibe_translate_desktop``
 # functions for translating Qt applications and desktop entries.
 #
 # ::
 #
-#   hawaii_translate_ts(<qm_files>
-#                       SOURCES <file> [<file> [...]]
-#                       [COMPONENT <component>]
-#                       [UPDATE_TRANSLATIONS]
-#                       [UPDATE_OPTIONS <option> [<option> [...]]]
-#                       [TEMPLATE <template>]
-#                       [TRANSLATION_DIR <trans_dir>]
-#                       [INSTALL_DIR <install_dir>])
+#   vibe_translate_ts(<qm_files>
+#                     SOURCES <file> [<file> [...]]
+#                     [COMPONENT <component>]
+#                     [UPDATE_TRANSLATIONS]
+#                     [UPDATE_OPTIONS <option> [<option> [...]]]
+#                     [TEMPLATE <template>]
+#                     [TRANSLATION_DIR <trans_dir>]
+#                     [INSTALL_DIR <install_dir>])
 #
 # Generate .qm compiled translation files into the <qm_files> variable
 # from source <file>s.
@@ -25,7 +25,7 @@
 # If UPDATE_TRANSLATIONS flag is present it extracts and compiles
 # the translations. If it's not present it only compiles the
 # translations.
-# If UPDATE_TRANSLATIONS flag is present, ``hawaii_translate_ts``
+# If UPDATE_TRANSLATIONS flag is present, ``vibe_translate_ts``
 # creates the ``update_<name>_ts`` target that will update the
 # .ts files.
 #
@@ -43,12 +43,12 @@
 # be specified with INSTALL_DIR. If not present the installation
 # is not performed.
 #
-# ``hawaii_translate_ts`` uses Qt linguist tools, hence it
+# ``vibe_translate_ts`` uses Qt linguist tools, hence it
 # checks if Qt5LinguistTools is available to import its macros.
 #
 # ::
 #
-#   hawaii_translate_desktop(<result_var>
+#   vibe_translate_desktop(<result_var>
 #                            SOURCES <file> [<file> [...]]
 #                            [TRANSLATION_DIR <trans_dir>])
 #
@@ -94,7 +94,7 @@
 
 include(CMakeParseArguments)
 
-function(hawaii_translate_ts qmFiles)
+function(vibe_translate_ts qmFiles)
     set(options UPDATE_TRANSLATIONS)
     set(oneValueArgs TEMPLATE TRANSLATION_DIR INSTALL_DIR COMPONENT)
     set(multiValueArgs SOURCES UPDATE_OPTIONS)
@@ -148,14 +148,14 @@ endfunction()
 
 
 # Original Author: Alexander Sokolov <sokoloff.a@gmail.com>
-function(hawaii_translate_desktop result_var)
+function(vibe_translate_desktop result_var)
     # Parse arguments
     set(oneValueArgs TRANSLATION_DIR)
     set(multiValueArgs SOURCES)
     cmake_parse_arguments(ARGS "" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
     if(ARGS_UNPARSED_ARGUMENTS)
-        message(FATAL_ERROR "Unknown keywords given to hawaii_translate_desktop(): \"${ARGS_UNPARSED_ARGUMENTS}\"")
+        message(FATAL_ERROR "Unknown keywords given to vibe_translate_desktop(): \"${ARGS_UNPARSED_ARGUMENTS}\"")
     endif()
 
     if(NOT DEFINED ARGS_SOURCES)

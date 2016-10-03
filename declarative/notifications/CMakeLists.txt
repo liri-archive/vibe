@@ -1,6 +1,6 @@
 include_directories(
     "${CMAKE_CURRENT_BINARY_DIR}/../../headers"
-    "${CMAKE_CURRENT_BINARY_DIR}/../../src/core/Hawaii"
+    "${CMAKE_CURRENT_BINARY_DIR}/../../src/core/Vibe"
 )
 
 set(SOURCES
@@ -22,9 +22,9 @@ target_link_libraries(notificationsplugin
                       Qt5::Gui
                       Qt5::Qml
                       Qt5::Quick
-                      Hawaii::Core)
+                      Vibe::Core)
 
 install(FILES qmldir plugins.qmltypes
-    DESTINATION ${QML_INSTALL_DIR}/Hawaii/Notifications)
+    DESTINATION ${QML_INSTALL_DIR}/Vibe/Notifications)
 install(TARGETS notificationsplugin
-    DESTINATION ${QML_INSTALL_DIR}/Hawaii/Notifications)
+    DESTINATION ${QML_INSTALL_DIR}/Vibe/Notifications)

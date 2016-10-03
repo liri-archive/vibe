@@ -1,5 +1,5 @@
 /****************************************************************************
- * This file is part of Hawaii.
+ * This file is part of Vibe.
  *
  * Copyright (C) 2015-2016 Pier Luigi Fiorini
  *
@@ -42,9 +42,9 @@ class NetworkManagerPlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri)
     {
-        Q_ASSERT(uri == QLatin1String("Hawaii.NetworkManager"));
+        Q_ASSERT(uri == QLatin1String("Vibe.NetworkManager"));
 
-        // @uri Hawaii.NetworkManager
+        // @uri Vibe.NetworkManager
         qmlRegisterType<AvailableDevices>(uri, 1, 0, "AvailableDevices");
         qmlRegisterType<ConnectionIcon>(uri, 1, 0, "ConnectionIcon");
         qmlRegisterType<EnabledConnections>(uri, 1, 0, "EnabledConnections");

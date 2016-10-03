@@ -1,5 +1,5 @@
 /*
- * This file is part of Hawaii.
+ * This file is part of Vibe.
  *
  * Copyright (C) 2016 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
  *
@@ -29,7 +29,7 @@
 
 class OrgFreedesktopNotificationsInterface;
 
-namespace Hawaii {
+namespace Vibe {
 
 class NotificationPrivate : public QObjectPrivate
 {
@@ -49,4 +49,4 @@ public:
     QStringList actions;
 };
 
-} // namespace Hawaii
+} // namespace Vibe

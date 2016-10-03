@@ -1,4 +1,4 @@
-project(libQmlOS)
+project(Vobe)
 
 cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
 cmake_policy(VERSION 3.4.1)
@@ -17,7 +17,7 @@ set(PROJECT_SOVERSION 0)
 
 if(NOT USE_SUPERBUILD)
     # Set up packaging
-    set(CPACK_PACKAGE_NAME "libqmlos")
+    set(CPACK_PACKAGE_NAME "vibe")
     set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
     set(CPACK_GENERATOR "TGZ")
     set(CPACK_SET_DESTDIR FALSE)

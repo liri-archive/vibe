@@ -1,5 +1,5 @@
 /*
- * libhawaii - A QML module and collection of classes used throughout Hawaii
+ * This file is part of Vibe.
  *
  * Copyright (C) 2016 Michael Spencer <sonrisesoftware@gmail.com>
  *
@@ -25,9 +25,9 @@
 #include <QBasicTimer>
 #include <functional>
 
-#include <Hawaii/core/hawaii_core_export.h>
+#include <Vibe/core/vibe_core_export.h>
 
-class HAWAIICORE_EXPORT QObjectListModel : public QAbstractListModel
+class VIBECORE_EXPORT QObjectListModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_DISABLE_COPY(QObjectListModel)

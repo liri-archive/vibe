@@ -1,5 +1,5 @@
 /****************************************************************************
- * This file is part of Hawaii.
+ * This file is part of Vibe.
  *
  * Copyright (C) 2015-2016 Pier Luigi Fiorini
  *
@@ -26,7 +26,7 @@
 
 #include <QtQml/QtQml>
 
-#include <Hawaii/Core/Notification>
+#include <Vibe/Core/Notification>
 
 #include "notifications.h"
 #include "notificationsimageprovider.h"
@@ -38,15 +38,15 @@ class NotificationsPlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri)
     {
-        // @uri Hawaii.Notifications
-        Q_ASSERT(uri == QStringLiteral("Hawaii.Notifications"));
+        // @uri Vibe.Notifications
+        Q_ASSERT(uri == QStringLiteral("Vibe.Notifications"));
 
         qmlRegisterSingletonType<Notifications>(uri, 1, 0, "NotificationsService", [](QQmlEngine *engine, QJSEngine *) {
             Notifications *notifications = new Notifications();
             engine->addImageProvider(QStringLiteral("notifications"), new NotificationsImageProvider(notifications->daemon()));
             return static_cast<QObject *>(notifications);
         });
-        qmlRegisterType<Hawaii::Notification>(uri, 1, 0, "Notification");
+        qmlRegisterType<Vibe::Notification>(uri, 1, 0, "Notification");
     }
 };
 

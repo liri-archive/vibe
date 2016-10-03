@@ -1,12 +1,12 @@
 {
   "package": {
-    "name": "libqmlos",
+    "name": "vibe",
     "repo": "archlinux-@GITBRANCH@",
-    "subject": "qmlos",
-    "desc": "A collection of core classes used throughout qmlOS",
-    "website_url": "https://github.com/qmlos",
-    "issue_tracker_url": "https://github.com/qmlos/libqmlos",
-    "vcs_url": "https://github.com/qmlos/libqmlos",
+    "subject": "liri",
+    "desc": "A collection of core classes used throughout Liri",
+    "website_url": "http://liri.io",
+    "issue_tracker_url": "https://github.com/lirios/vibe",
+    "vcs_url": "https://github.com/lirios/vibe",
     "licenses": ["LGPL-3.0"],
     "labels": ["qt", "qml", "qtquick"]
   },
@@ -22,8 +22,8 @@
     "gpgSign": false
   },
   "files": [
-    {"includePattern": "cibuild/(libqmlos-git-.*.pkg.tar.xz)", "uploadPattern": "@ARCH@/$1", "matrixParams": {"override": 1}},
-    {"includePattern": "cibuild/(libqmlos.db.tar.gz)", "uploadPattern": "@ARCH@/libqmlos.db", "matrixParams": {"override": 1}}
+    {"includePattern": "cibuild/(vibe-git-.*.pkg.tar.xz)", "uploadPattern": "@ARCH@/$1", "matrixParams": {"override": 1}},
+    {"includePattern": "cibuild/(vibe.db.tar.gz)", "uploadPattern": "@ARCH@/vibe.db", "matrixParams": {"override": 1}}
   ],
   "publish": true
 }

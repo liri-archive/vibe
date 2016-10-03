@@ -1,5 +1,5 @@
 /****************************************************************************
- * This file is part of Hawaii.
+ * This file is part of Vibe.
  *
  * Copyright (C) 2015 Pier Luigi Fiorini
  * Copyright (C) 2016 Michael Spencer <sonrisesoftware@gmail.com>
@@ -29,7 +29,7 @@
 
 #include "kquickwallet.h"
 
-class HawaiiWalletPlugin : public QQmlExtensionPlugin
+class VibeWalletPlugin : public QQmlExtensionPlugin
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
@@ -37,8 +37,8 @@ class HawaiiWalletPlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri)
     {
-        // @uri Hawaii.Wallet
-        Q_ASSERT(uri == QStringLiteral("Hawaii.Wallet"));
+        // @uri Vibe.Wallet
+        Q_ASSERT(uri == QStringLiteral("Vibe.Wallet"));
 
         qmlRegisterType<KQuickWallet>(uri, 1, 0, "KQuickWallet");
     }

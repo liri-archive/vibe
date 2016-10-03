@@ -1,5 +1,5 @@
 /****************************************************************************
-* This file is part of Hawaii.
+* This file is part of Vibe.
  *
  * Copyright (C) 2015-2016 Pier Luigi Fiorini
  *
@@ -28,7 +28,7 @@
 
 #include "storagedevice.h"
 
-Q_LOGGING_CATEGORY(DEVICE, "hawaii.qml.hardware.storagedevice")
+Q_LOGGING_CATEGORY(DEVICE, "vibe.hardware.storagedevice")
 
 StorageDevice::StorageDevice(const QString &udi, QObject *parent)
     : QObject(parent)

@@ -16,10 +16,10 @@ set(SOURCES
 
 qt5_add_dbus_interfaces(SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/../../declarative/notifications/org.freedesktop.Notifications.xml")
 
-add_library(HawaiiCore SHARED ${SOURCES})
-add_library(Hawaii::Core ALIAS HawaiiCore)
+add_library(VibeCore SHARED ${SOURCES})
+add_library(Vibe::Core ALIAS VibeCore)
 
-target_link_libraries(HawaiiCore
+target_link_libraries(VibeCore
     PUBLIC
         Qt5::Core
         Qt5::DBus
@@ -30,20 +30,20 @@ target_link_libraries(HawaiiCore
 
 ##############################################################################
 
-generate_export_header(HawaiiCore EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/Hawaii/core/hawaii_core_export.h")
+generate_export_header(VibeCore EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/Vibe/core/vibe_core_export.h")
 
-target_include_directories(HawaiiCore
+target_include_directories(VibeCore
     INTERFACE
-        "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/Hawaii>"
-        "$<INSTALL_INTERFACE:${HAWAII_INCLUDEDIR}>"
+        "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/Vibe>"
+        "$<INSTALL_INTERFACE:${VIBE_INCLUDEDIR}>"
 )
 
-set_target_properties(HawaiiCore PROPERTIES
+set_target_properties(VibeCore PROPERTIES
                       VERSION ${PROJECT_VERSION}
                       SOVERSION ${PROJECT_SOVERSION}
                       EXPORT_NAME Core)
 
-ecm_generate_headers(HawaiiCore_CamelCase_HEADERS
+ecm_generate_headers(VibeCore_CamelCase_HEADERS
   HEADER_NAMES
     DesktopFile
     DesktopFileAction
@@ -54,20 +54,20 @@ ecm_generate_headers(HawaiiCore_CamelCase_HEADERS
   PREFIX
     Core
   REQUIRED_HEADERS
-    HawaiiCore_HEADERS
+    VibeCore_HEADERS
   OUTPUT_DIR
-    "${CMAKE_CURRENT_BINARY_DIR}/Hawaii"
+    "${CMAKE_CURRENT_BINARY_DIR}/Vibe"
 )
-install(FILES ${HawaiiCore_CamelCase_HEADERS}
-        DESTINATION ${HAWAII_INCLUDEDIR}/Core
+install(FILES ${VibeCore_CamelCase_HEADERS}
+        DESTINATION ${VIBE_INCLUDEDIR}/Core
         COMPONENT Devel)
 
-install(TARGETS HawaiiCore EXPORT HawaiiCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS VibeCore EXPORT VibeCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(
     FILES
-      "${CMAKE_CURRENT_BINARY_DIR}/Hawaii/core/hawaii_core_export.h"
-      ${HawaiiCore_HEADERS}
+      "${CMAKE_CURRENT_BINARY_DIR}/Vibe/core/vibe_core_export.h"
+      ${VibeCore_HEADERS}
       desktopfile.h
       desktopfileaction.h
       notification.h
@@ -75,11 +75,11 @@ install(
       qobjectlistmodel.h
       kformat.h
     DESTINATION
-      ${HAWAII_INCLUDEDIR}/core
+      ${VIBE_INCLUDEDIR}/core
     COMPONENT
       Devel
 )
 
-install(EXPORT HawaiiCoreTargets
+install(EXPORT VibeCoreTargets
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        FILE HawaiiCoreTargets.cmake NAMESPACE Hawaii::)
+        FILE VibeCoreTargets.cmake NAMESPACE Vibe::)

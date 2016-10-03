@@ -1,5 +1,5 @@
 /****************************************************************************
- * This file is part of Hawaii.
+ * This file is part of Vibe.
  *
  * Copyright (C) 2012-2016 Pier Luigi Fiorini
  *
@@ -226,10 +226,10 @@ QStringList NotificationsDaemon::GetCapabilities()
 
 QString NotificationsDaemon::GetServerInformation(QString &vendor, QString &version, QString &specVersion)
 {
-    vendor = QStringLiteral("Hawaii");
-    version = QString::fromUtf8(LIBHAWAII_VERSION_STRING);
+    vendor = QStringLiteral("Vibe");
+    version = QString::fromUtf8(VIBE_VERSION_STRING);
     specVersion = QStringLiteral("1.1");
-    return QStringLiteral("Hawaii");
+    return QStringLiteral("Vibe");
 }
 
 uint NotificationsDaemon::nextId()

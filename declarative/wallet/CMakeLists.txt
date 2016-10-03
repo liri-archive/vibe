@@ -10,6 +10,6 @@ target_link_libraries(hawaiiwallet
                       KF5::Wallet)
 
 install(TARGETS hawaiiwallet
-        LIBRARY DESTINATION ${QML_INSTALL_DIR}/Hawaii/Wallet)
+        LIBRARY DESTINATION ${QML_INSTALL_DIR}/Vibe/Wallet)
 install(FILES qmldir
-        DESTINATION ${QML_INSTALL_DIR}/Hawaii/Wallet)
+        DESTINATION ${QML_INSTALL_DIR}/Vibe/Wallet)

@@ -1,4 +1,4 @@
-module Hawaii.Hardware
+module Vibe.Hardware
 plugin hardwareplugin
 classname HardwarePlugin
 typeinfo plugins.qmltypes

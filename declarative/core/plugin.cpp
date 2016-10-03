@@ -1,5 +1,5 @@
 /****************************************************************************
- * This file is part of Hawaii.
+ * This file is part of Vibe.
  *
  * Copyright (C) 2016 Michael Spencer <sonrisesoftware@gmail.com>
  *
@@ -41,8 +41,8 @@ class CorePlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri)
     {
-        // @uri Hawaii.Core
-        Q_ASSERT(uri == QStringLiteral("Hawaii.Core"));
+        // @uri Vibe.Core
+        Q_ASSERT(uri == QStringLiteral("Vibe.Core"));
 
         qmlRegisterSingletonType<Formatter>(uri, 1, 0, "Formatter", formatterProvider);
     }

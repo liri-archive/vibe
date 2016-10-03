@@ -1,5 +1,5 @@
 /****************************************************************************
- * This file is part of Hawaii.
+ * This file is part of Vibe.
  *
  * Copyright (C) 2016 Michael Spencer <sonrisesoftware@gmail.com>
  *
@@ -25,7 +25,7 @@
 
 #include <QtCore/QLocale>
 #include <QtCore/QObject>
-#include <Hawaii/Core/KFormat>
+#include <Vibe/Core/KFormat>
 
 /**
   * Formats is a wrapper around KFormat which provides support for formatting

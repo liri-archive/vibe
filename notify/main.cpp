@@ -16,11 +16,11 @@
 #include <QtCore/QCoreApplication>
 #include <QtCore/QCommandLineParser>
 
-#include <Hawaii/Core/Notification>
+#include <Vibe/Core/Notification>
 
 #include "config.h"
 
-using namespace Hawaii;
+using namespace Vibe;
 
 #define TR(x) QT_TRANSLATE_NOOP("Command line parser", QLatin1String(x))
 
@@ -28,10 +28,10 @@ int main(int argc, char *argv[])
 {
     // Application
     QCoreApplication app(argc, argv);
-    app.setApplicationName(QLatin1String("Hawaii"));
-    app.setApplicationVersion(LIBHAWAII_VERSION_STRING);
-    app.setOrganizationName(QLatin1String("Hawaii"));
-    app.setOrganizationDomain(QLatin1String("hawaiios.org"));
+    app.setApplicationName(QLatin1String("Vibe"));
+    app.setApplicationVersion(VIBE_VERSION_STRING);
+    app.setOrganizationName(QLatin1String("Liri"));
+    app.setOrganizationDomain(QLatin1String("liri.io"));
 
     // Command line parser
     QCommandLineParser parser;

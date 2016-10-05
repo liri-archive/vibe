@@ -52,8 +52,11 @@ Module {
         }
         Property { name: "udi"; type: "string"; isReadonly: true }
         Property { name: "name"; type: "string"; isReadonly: true }
+        Property { name: "summary"; type: "string"; isReadonly: true }
         Property { name: "iconName"; type: "string"; isReadonly: true }
+        Property { name: "chargeIconName"; type: "string"; isReadonly: true }
         Property { name: "type"; type: "Type"; isReadonly: true }
+        Property { name: "mouse"; type: "bool"; isReadonly: true }
         Property { name: "technology"; type: "Technology"; isReadonly: true }
         Property { name: "chargePercent"; type: "int"; isReadonly: true }
         Property { name: "capacity"; type: "int"; isReadonly: true }
@@ -78,6 +81,7 @@ Module {
         prototype: "QObject"
         exports: ["Vibe.Hardware/HardwareEngine 1.0"]
         exportMetaObjectRevisions: [0]
+        Property { name: "primaryBattery"; type: "Battery"; isReadonly: true; isPointer: true }
         Property { name: "batteries"; type: "Battery"; isList: true; isReadonly: true }
         Property { name: "storageDevices"; type: "StorageDevice"; isList: true; isReadonly: true }
         Signal {

@@ -59,4 +59,49 @@ Module {
             Parameter { name: "reason"; type: "Notifications::CloseReason" }
         }
     }
+    Component {
+        name: "Vibe::Notification"
+        prototype: "QObject"
+        exports: ["Vibe.Notifications/Notification 1.0"]
+        exportMetaObjectRevisions: [0]
+        Enum {
+            name: "Urgency"
+            values: {
+                "UrgencyLow": 0,
+                "UrgencyNormal": 1,
+                "UrgencyCritical": 2
+            }
+        }
+        Enum {
+            name: "CloseReason"
+            values: {
+                "Expired": 1,
+                "DismissedByUser": 2,
+                "Closed": 3
+            }
+        }
+        Property { name: "applicationName"; type: "string" }
+        Property { name: "applicationIcon"; type: "string" }
+        Property { name: "summary"; type: "string" }
+        Property { name: "body"; type: "string" }
+        Property { name: "replacesId"; type: "uint" }
+        Property { name: "urgency"; type: "Urgency" }
+        Property { name: "timeout"; type: "int" }
+        Signal { name: "defaultActionChanged" }
+        Signal { name: "sendFailed" }
+        Signal {
+            name: "sendSucceeded"
+            Parameter { name: "id"; type: "uint" }
+        }
+        Signal {
+            name: "actionInvoked"
+            Parameter { name: "action"; type: "string" }
+        }
+        Signal {
+            name: "closed"
+            Parameter { name: "reason"; type: "CloseReason" }
+        }
+        Method { name: "send" }
+        Method { name: "close" }
+    }
 }

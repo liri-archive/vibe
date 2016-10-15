@@ -7,8 +7,8 @@ set(SOURCES
     main.cpp
 )
 
-add_executable(notify ${SOURCES})
-target_link_libraries(notify Vibe::Core)
+add_executable(liri-notify ${SOURCES})
+target_link_libraries(liri-notify Vibe::Core)
 
-install(TARGETS notify RUNTIME
+install(TARGETS liri-notify RUNTIME
         DESTINATION ${BIN_INSTALL_DIR})

@@ -6,6 +6,7 @@ include_directories(
 add_definitions(-DQT_NO_KEYWORDS)
 
 set(SOURCES
+    dbusservice.cpp
     desktopfile.cpp
     desktopfileaction.cpp
     kformat.cpp
@@ -14,6 +15,14 @@ set(SOURCES
     qobjectlistmodel.cpp
 )
 
+qt5_add_dbus_adaptor(
+    SOURCES
+    "${CMAKE_CURRENT_SOURCE_DIR}/org.freedesktop.Application.xml"
+    dbusservice.h
+    Vibe::DBusService
+    dbusservice_adaptor
+    DBusServiceAdaptor
+)
 qt5_add_dbus_interfaces(SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/../../declarative/notifications/org.freedesktop.Notifications.xml")
 
 add_library(VibeCore SHARED ${SOURCES})
@@ -45,6 +54,7 @@ set_target_properties(VibeCore PROPERTIES
 
 ecm_generate_headers(VibeCore_CamelCase_HEADERS
   HEADER_NAMES
+    DBusService
     DesktopFile
     DesktopFileAction
     Notification
@@ -68,6 +78,7 @@ install(
     FILES
       "${CMAKE_CURRENT_BINARY_DIR}/Vibe/core/vibe_core_export.h"
       ${VibeCore_HEADERS}
+      dbusservice.h
       desktopfile.h
       desktopfileaction.h
       notification.h

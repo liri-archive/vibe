@@ -1,0 +1,3 @@
+module Vibe.Wallet
+plugin hawaiiwallet
+classname VibeWalletPlugin

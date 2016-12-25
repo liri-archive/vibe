@@ -1,0 +1,5 @@
+module Vibe.PulseAudio
+plugin pulseaudioplugin
+classname PulseAudioPlugin
+
+VolumeControl 1.0 VolumeControl.qml

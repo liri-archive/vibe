@@ -1,0 +1,4 @@
+module Vibe.Hardware
+plugin hardwareplugin
+classname HardwarePlugin
+typeinfo plugins.qmltypes

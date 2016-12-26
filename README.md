@@ -5,9 +5,9 @@ Vibe
 
 [![License](https://img.shields.io/badge/license-LGPLv3.0-blue.svg)](http://www.gnu.org/licenses/lgpl.txt)
 [![GitHub release](https://img.shields.io/github/release/lirios/vibe.svg)](https://github.com/lirios/vibe)
-[![Build Status](https://travis-ci.org/lirios/vibe.svg?branch=develop)](https://travis-ci.org/lirios/vibe)
+[![Build Status](https://travis-ci.org/lirios/vibe.svg?branch=master)](https://travis-ci.org/lirios/vibe)
 [![GitHub issues](https://img.shields.io/github/issues/lirios/vibe.svg)](https://github.com/lirios/vibe/issues)
-[![Maintained](https://img.shields.io/maintenance/yes/2016.svg)](https://github.com/lirios/vibe/commits/develop)
+[![Maintained](https://img.shields.io/maintenance/yes/2016.svg)](https://github.com/lirios/vibe/commits/master)
 
 A collection of core classes used throughout Liri.
 

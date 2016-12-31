@@ -593,6 +593,7 @@ QString UiUtils::convertNspTypeToString(WimaxNsp::NetworkType type)
         case WimaxNsp::Home: return QObject::tr("Home");
         case WimaxNsp::Partner: return QObject::tr("Partner");
         case WimaxNsp::RoamingPartner: return QObject::tr("Roaming partner");
+        default: break;
     }
 
     /*: Unknown */

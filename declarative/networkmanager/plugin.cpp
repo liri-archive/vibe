@@ -29,11 +29,14 @@
 #include "availabledevices.h"
 #include "appletproxymodel.h"
 #include "connectionicon.h"
+#include "connectionmodel.h"
 #include "enabledconnections.h"
 #include "enums.h"
 #include "handler.h"
 #include "networkmodel.h"
 #include "networkstatus.h"
+#include "technologyproxymodel.h"
+#include "wiredsettings.h"
 
 class NetworkManagerPlugin : public QQmlExtensionPlugin
 {
@@ -47,6 +50,7 @@ public:
 
         qmlRegisterType<AvailableDevices>(uri, 1, 0, "AvailableDevices");
         qmlRegisterType<ConnectionIcon>(uri, 1, 0, "ConnectionIcon");
+        qmlRegisterType<ConnectionModel>(uri, 1, 0, "ConnectionModel");
         qmlRegisterType<EnabledConnections>(uri, 1, 0, "EnabledConnections");
         qmlRegisterUncreatableType<Enums>(uri, 1, 0, "Enums",
                                           QLatin1String("Cannot instantiate Enums"));
@@ -54,6 +58,12 @@ public:
         qmlRegisterType<Handler>(uri, 1, 0, "Handler");
         qmlRegisterType<NetworkModel>(uri, 1, 0, "NetworkModel");
         qmlRegisterType<AppletProxyModel>(uri, 1, 0, "AppletProxyModel");
+        qmlRegisterType<TechnologyProxyModel>(uri, 1, 0, "TechnologyProxyModel");
+
+        // Settings
+        qmlRegisterUncreatableType<Security8021xSettings>(uri, 1, 0, "Security8021xSettings", tr("Cannot instantiate Security8021xSettings"));
+        qmlRegisterUncreatableType<IPv4Settings>(uri, 1, 0, "IPv4Settings", tr("Cannot instantiate IPv4Settings"));
+        qmlRegisterType<WiredSettings>(uri, 1, 0, "WiredSettings");
     }
 };
 

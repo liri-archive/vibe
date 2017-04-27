@@ -39,6 +39,8 @@ public:
         Q_ASSERT(QLatin1String(uri) == QLatin1String("Vibe.Hardware"));
 
         qmlRegisterType<HardwareEngine>(uri, 1, 0, "HardwareEngine");
+        qmlRegisterUncreatableType<BacklightDevice>(uri, 1, 0, "BacklightDevice",
+                                                    QStringLiteral("Cannot create BacklightDevice object"));
         qmlRegisterUncreatableType<Battery>(uri, 1, 0, "Battery",
                                             QStringLiteral("Cannot create Battery object"));
         qmlRegisterUncreatableType<StorageDevice>(uri, 1, 0, "StorageDevice",

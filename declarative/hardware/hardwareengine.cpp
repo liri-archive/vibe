@@ -24,6 +24,8 @@
  * $END_LICENSE$
  ***************************************************************************/
 
+#include <QtCore/QDirIterator>
+
 #include <Solid/DeviceNotifier>
 #include <Solid/StorageAccess>
 
@@ -84,10 +86,47 @@ HardwareEngine::HardwareEngine(QObject *parent) : QObject(parent)
             Q_EMIT storageDeviceAdded(storageDevice);
         }
     }
+
+    // Add backlight devices
+    QDirIterator it(QLatin1String("/sys/class/backlight"));
+    while (it.hasNext()) {
+        bool ok = false;
+
+        // Must be able to open the file, otherwise skip the device altogether
+        QString deviceFile = it.next() + QLatin1String("/brightness");
+        QFile file(deviceFile);
+        if (!file.open(QIODevice::ReadOnly))
+            continue;
+        ok = false;
+        uint value = file.readAll().simplified().toUInt(&ok);
+        if (!ok)
+            continue;
+
+        // Must be able to read max brightness, otherwise skip the device altogether
+        QFile maxBrightnessFile(it.filePath() + QLatin1String("/max_brightness"));
+        if (!maxBrightnessFile.open(QIODevice::ReadOnly))
+            continue;
+
+        // Read max brightness
+        ok = false;
+        uint maxBrightness = maxBrightnessFile.readAll().simplified().toUInt(&ok);
+        if (!ok || maxBrightness == 0)
+            continue;
+
+        // Scale value to max brightness
+        value = value == maxBrightness ? 255 : (value * 256) / (maxBrightness + 1);
+
+        // Create the device
+        BacklightDevice *device = new BacklightDevice(it.fileName(), value, maxBrightness);
+        m_backlightDevices[device->name()] = device;
+    }
 }
 
 HardwareEngine::~HardwareEngine()
 {
+    qDeleteAll(m_backlightDevices);
+    m_backlightDevices.clear();
+
     qDeleteAll(m_storageDevices);
     m_storageDevices.clear();
 }
@@ -100,6 +139,17 @@ Battery *HardwareEngine::primaryBattery() const
     }
 
     return nullptr;
+}
+
+QQmlListProperty<BacklightDevice> HardwareEngine::backlightDevices()
+{
+    auto countFunc = [](QQmlListProperty<BacklightDevice> *prop) {
+        return static_cast<HardwareEngine *>(prop->object)->m_backlightDevices.count();
+    };
+    auto atFunc = [](QQmlListProperty<BacklightDevice> *prop, int index) {
+        return static_cast<HardwareEngine *>(prop->object)->m_backlightDevices.values().at(index);
+    };
+    return QQmlListProperty<BacklightDevice>(this, 0, countFunc, atFunc);
 }
 
 QQmlListProperty<Battery> HardwareEngine::batteries()

@@ -32,6 +32,7 @@
 #include <QtQml/QQmlListProperty>
 
 #include "battery.h"
+#include "backlightdevice.h"
 #include "storagedevice.h"
 
 Q_DECLARE_LOGGING_CATEGORY(HARDWARE)
@@ -40,6 +41,7 @@ class HardwareEngine : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(Battery *primaryBattery READ primaryBattery NOTIFY batteriesChanged)
+    Q_PROPERTY(QQmlListProperty<BacklightDevice> backlightDevices READ backlightDevices NOTIFY backlightDevicesChanged)
     Q_PROPERTY(QQmlListProperty<Battery> batteries READ batteries NOTIFY batteriesChanged)
     Q_PROPERTY(QQmlListProperty<StorageDevice> storageDevices READ storageDevices NOTIFY
                        storageDevicesChanged)
@@ -48,10 +50,15 @@ public:
     ~HardwareEngine();
 
     Battery *primaryBattery() const;
+    QQmlListProperty<BacklightDevice> backlightDevices();
     QQmlListProperty<Battery> batteries();
     QQmlListProperty<StorageDevice> storageDevices();
 
 Q_SIGNALS:
+    void backlightDeviceAdded(BacklightDevice *device);
+    void backlightDeviceRemoved(BacklightDevice *device);
+    void backlightDevicesChanged();
+
     void storageDeviceAdded(StorageDevice *device);
     void storageDeviceRemoved(StorageDevice *device);
     void storageDevicesChanged();
@@ -61,6 +68,7 @@ Q_SIGNALS:
     void batteriesChanged();
 
 private:
+    QMap<QString, BacklightDevice *> m_backlightDevices;
     QMap<QString, Battery *> m_batteries;
     QMap<QString, StorageDevice *> m_storageDevices;
 };

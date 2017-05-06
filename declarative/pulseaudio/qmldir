@@ -1,5 +1,6 @@
 module Vibe.PulseAudio
 plugin pulseaudioplugin
 classname PulseAudioPlugin
+typeinfo plugins.qmltypes
 
 VolumeControl 1.0 VolumeControl.qml

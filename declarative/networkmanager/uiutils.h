@@ -41,8 +41,6 @@
 #include <ModemManagerQt/modem.h>
 #endif
 
-#include <config.h>
-
 class Q_DECL_EXPORT UiUtils
 {
 public:

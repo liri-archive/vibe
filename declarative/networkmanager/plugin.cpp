@@ -42,9 +42,9 @@ class NetworkManagerPlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri)
     {
-        Q_ASSERT(uri == QLatin1String("Vibe.NetworkManager"));
-
         // @uri Vibe.NetworkManager
+        Q_ASSERT(QLatin1String(uri) == QLatin1String("Vibe.NetworkManager"));
+
         qmlRegisterType<AvailableDevices>(uri, 1, 0, "AvailableDevices");
         qmlRegisterType<ConnectionIcon>(uri, 1, 0, "ConnectionIcon");
         qmlRegisterType<EnabledConnections>(uri, 1, 0, "EnabledConnections");

@@ -1,3 +1,4 @@
 module Vibe.Wallet
-plugin hawaiiwallet
+plugin walletplugin
 classname VibeWalletPlugin
+typeinfo plugins.qmltypes

@@ -24,5 +24,4 @@ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/VibeConfig.cmake"
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/vibe_version.h
         DESTINATION ${VIBE_INCLUDEDIR}/vibe COMPONENT Devel)
 
-add_subdirectory(core)
 add_subdirectory(translations)

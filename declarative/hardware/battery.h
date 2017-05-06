@@ -32,7 +32,7 @@
 #include <QtCore/QUrl>
 #include <Solid/Battery>
 #include <Solid/Device>
-#include <Vibe/Core/KFormat>
+#include <LiriCore/kformat.h>
 
 Q_DECLARE_LOGGING_CATEGORY(BATTERY)
 

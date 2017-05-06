@@ -15,7 +15,6 @@ A collection of core classes used throughout Liri.
 
 This library includes:
 
- * An enhanced `QList` that provides a model with change notifications for QML.
  * A QML wrapper around KWallet
  * A QML plugin to access storage devices and batteries
  * A QML plugin for freedesktop.org notification servers

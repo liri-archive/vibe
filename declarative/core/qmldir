@@ -1,3 +1,0 @@
-module Vibe.Core
-plugin hawaiicore
-classname CorePlugin

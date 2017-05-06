@@ -71,9 +71,6 @@ set(REQUIRED_KF5_VERSION "5.8.0")
 find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS
              Wallet Solid NetworkManagerQt ModemManagerQt)
 
-# Find Qt5Xdg
-find_package(QT5XDG REQUIRED)
-
 # Find PolicyKit Qt5
 set(REQUIRED_POLKITQT_VERSION "0.103.0")
 find_package(PolkitQt5-1 ${REQUIRED_POLKITQT_VERSION} REQUIRED)
@@ -86,8 +83,6 @@ find_package(Fluid ${REQUIRED_FLUID_VERSION} REQUIRED)
 add_subdirectory(headers)
 add_subdirectory(src)
 add_subdirectory(declarative)
-add_subdirectory(notify)
-add_subdirectory(tests)
 
 # Display featute summary
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

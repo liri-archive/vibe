@@ -1,4 +1,0 @@
-module Vibe.Notifications
-plugin notificationsplugin
-classname NotificationsPlugin
-typeinfo plugins.qmltypes

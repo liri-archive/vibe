@@ -58,12 +58,8 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE STRING "" FORCE)
 endif()
 
-# gio (for the GSettings Qt wrapper)
-pkg_check_modules(gio gio-2.0 REQUIRED)
-
 # Find PulseAudio
 find_package(PulseAudio 5.0.0 REQUIRED)
-find_package(GLIB2 REQUIRED)
 
 # Find Qt5
 set(REQUIRED_QT_VERSION "5.6.0")

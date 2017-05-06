@@ -15,8 +15,6 @@ A collection of core classes used throughout Liri.
 
 This library includes:
 
- * A Qt-style wrapper for GSettings that provides a nice
-   settings API based on schemas with change notifications.
  * An enhanced `QList` that provides a model with change notifications for QML.
  * A QML wrapper around KWallet
  * A QML plugin to access storage devices and batteries
@@ -35,7 +33,6 @@ The following modules and their dependencies are required:
 
  * [ECM >= 1.7.0](http://quickgit.kde.org/?p=extra-cmake-modules.git)
  * [fluid](https://github.com/lirios/fluid.git)
- * [glib >= 2.31.0](https://git.gnome.org/browse/glib)
  * [kwallet](http://quickgit.kde.org/?p=kwallet.git)
  * [solid](http://quickgit.kde.org/?p=solid.git)
  * [networkmanager-qt](http://quickgit.kde.org/?p=networkmanager-qt.git)
@@ -77,12 +74,6 @@ Please refer to the [Qt](http://doc.qt.io/qt-5/qloggingcategory.html) documentat
 to learn how to enable them.
 
 ### Available categories
-
- * Library:
-   * **vibe.qgsettings:** Qt GSettings wrapper
-
- * Settings QML plugin:
-   * **vibe.settings:** Settings.
 
  * Hardware QML plugin:
    * **vibe.hardware:** Hardware service.

@@ -38,7 +38,7 @@ public:
     void registerTypes(const char *uri)
     {
         // @uri Vibe.Wallet
-        Q_ASSERT(uri == QStringLiteral("Vibe.Wallet"));
+        Q_ASSERT(QLatin1String(uri) == QLatin1String("Vibe.Wallet"));
 
         qmlRegisterType<KQuickWallet>(uri, 1, 0, "KQuickWallet");
     }

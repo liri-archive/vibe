@@ -36,7 +36,7 @@ public:
     void registerTypes(const char *uri)
     {
         // @uri Vibe.Hardware
-        Q_ASSERT(uri == QStringLiteral("Vibe.Hardware"));
+        Q_ASSERT(QLatin1String(uri) == QLatin1String("Vibe.Hardware"));
 
         qmlRegisterType<HardwareEngine>(uri, 1, 0, "HardwareEngine");
         qmlRegisterUncreatableType<Battery>(uri, 1, 0, "Battery",

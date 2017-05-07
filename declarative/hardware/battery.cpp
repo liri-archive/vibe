@@ -180,20 +180,20 @@ QString Battery::serial() const
 
 QString Battery::chargeIconName() const
 {
-    QString level = "full";
+    QString level = QLatin1String("full");
 
     if (chargePercent() < 25)
-        level = "20";
+        level = QLatin1String("20");
     else if (chargePercent() < 35)
-        level = "30";
+        level = QLatin1String("30");
     else if (chargePercent() < 55)
-        level = "50";
+        level = QLatin1String("50");
     else if (chargePercent() < 65)
-        level = "60";
+        level = QLatin1String("60");
     else if (chargePercent() < 85)
-        level = "80";
+        level = QLatin1String("80");
     else if (chargePercent() < 95)
-        level = "90";
+        level = QLatin1String("90");
 
     if (chargeState() == Battery::Charging || chargeState() == Battery::FullyCharged)
         return QStringLiteral("device/battery_charging_%1").arg(level);
@@ -207,11 +207,11 @@ QString Battery::name() const
         // TODO: Use m_battery.description() or product here()
         return product();
     } else if (type() == Battery::PrimaryBattery) {
-        return "Battery";
+        return QLatin1String("Battery");
     } else if (type() == Battery::MonitorBattery) {
-        return "External Display";
+        return QLatin1String("External Display");
     } else if (type() == Battery::KeyboardBattery) {
-        return "Keyboard";
+        return QLatin1String("Keyboard");
     } else {
         // TODO: Use m_battery.description() or product here()
         return product();
@@ -221,17 +221,17 @@ QString Battery::name() const
 QString Battery::iconName() const
 {
     if (isMouse()) {
-        return "hardware/mouse";
+        return QLatin1String("hardware/mouse");
     } else if (type() == Battery::PrimaryBattery) {
         return chargeIconName();
     } else if (type() == Battery::MonitorBattery) {
-        return "hardware/desktop_windows";
+        return QLatin1String("hardware/desktop_windows");
     } else if (type() == Battery::KeyboardBattery) {
-        return "hardware/keyboard";
+        return QLatin1String("hardware/keyboard");
     } else if (type() == Battery::PhoneBattery) {
-        return "hardware/smartphone";
+        return QLatin1String("hardware/smartphone");
     } else {
-        return "device/battery_std";
+        return QLatin1String("device/battery_std");
     }
 }
 
@@ -246,7 +246,7 @@ QString Battery::summary() const
         return QStringLiteral("%1 remaining")
             .arg(formatter.formatDuration(timeToEmpty() * 1000, KFormat::HideSeconds));
     } else if (chargeState() == Battery::FullyCharged) {
-        return "Fully Charged";
+        return QLatin1String("Fully Charged");
     } else {
         return percent;
     }
@@ -255,6 +255,6 @@ QString Battery::summary() const
 bool Battery::isMouse() const
 {
     return type() == Battery::MouseBattery || type() == Battery::KeyboardMouseBattery
-        || m_device.description().toLower().indexOf("mouse") != -1
-        || product().toLower().indexOf("mouse") != -1;
+        || m_device.description().toLower().indexOf(QLatin1String("mouse")) != -1
+        || product().toLower().indexOf(QLatin1String("mouse")) != -1;
 }

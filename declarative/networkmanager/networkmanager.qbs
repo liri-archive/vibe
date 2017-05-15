@@ -10,6 +10,7 @@ LiriDynamicLibrary {
 
     cpp.defines: [
         'VIBE_VERSION="' + project.version + '"',
+        "QT_NO_KEYWORDS",
         "WITH_MODEMMANAGER_SUPPORT"
     ]
 

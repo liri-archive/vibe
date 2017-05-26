@@ -1,24 +1,27 @@
 language: c
 
 compiler:
-  - gcc
   - clang
+  - gcc
 
 sudo: required
 
+services:
+  - docker
+
 env:
   global:
-    # BINTRAY_USER
-    - secure: "q4oo8ju6ogsa+ubXmoDI9ovlE7YJ1OBc6VITikyDHWNB8HYPZxMKIMfyrmyTarZNLoZWX9Bj6GLWpVmTL/FNGfstfWljUcEUbFSSCe3adIzvpKnLFWUS3Oug54AWJHRaEmJilMBXatSnxMxiXjnf7wTnFCwl28jM6YHgLLMO+YdvuzO9h/9mVcChmLWpROlg+96NHVDrqRR0bLTivboq5diLqtHZe8BhBREzVis1w7THJFbGd4E/pqj5oWRe14m9U+3sZV2+XpvbHbylEfa7e9qkX41mbp7ki2x5ts4dtDdT3FuBuS2dNdQLOa/nJNeQ1dLCah/wSkMeSus1k4je/rmkpGfg+zOqjnJRlo316Y+DgxBFRVdKOOqpfto14TXi37qmAZLfHOLYZneXNUDRNmrbU/0rYpH/loeX49ElkTmXtLm7QnYGtTD1APKGAzMnbpWZKSIlDwlnYzhXSvuRdK7bHL61VYNJDjAOwZvM9/FPLEAd020fC4KTNScz4sKH3wM0goaeChTO9k4LddxY0cEY3vLuRQQXCOuRLveLixcDjXqNxGF+IaeIJ91BO5Qce6ZUklJu3syY+QGLuDu7EJdGHjV/kGC61+NQtdOo9f4xEsuV4bo9wxYk4Hemg+GKJ1A6JeXmBb1tNhAg7lNCY4WqnapTT6FIgvFu3fvVxiA="
-    # BINTRAY_API_KEY
-    - secure: "utk32ZXXTCp9miFsYGrlZ/3lgjpa/ekXMRhhLJBHlMoYvjCkQlGonXf0qVHpB6HuxH6WHBhPyx+UIdyXHcI78MUHZVxuw9nVw5pVnrrHPKkcfc985HmD+IOTS2FVoLdztvx1/VJViqH3XwfmOVnN/uQiRyy03jN03UPdSN0sCC0XOoGntewXUxvNsqYRMcvgCFOLAKy4rHprVXGrwGC++H0rg7QWW0IwtGQO7PuX5IH4v7AwlOmVEGP/RGnANdpOaR5cmtud8b/c/Xq+l1ntMGXHgJcQsY6IJSOpSTQ/h3LsMLTBOJqnmH6q4ZDTln8tCOuTkPdhShVtJyFX6A0E+AZO/v+Q7dqoGPkBQf81rQ2tysHfeJ0fg095vRkylLQ/0CszOzlk3DSR87Nfzh/njbiwON0tysUyi3H+M+O0C5qwOHfxne9oLVezxB/Wr7YbuJLvBuk+Fn5GJzFJhUOZVeZXM48ZPFKcHh6ank7gv/iuzLACa8kB6PbhtwYCHTSdTwu2FxR08AGqM86FF4avopGwHdF7DWGbM+WAGrUzVEWkSSZVS6DnMEZnXIHFMqfmXJGs+iMCG+qkVSoEvdxDZmlkhJCJRqVukfHuAllW4wtUUT+x5ThL/xbEJmV5g6/VrSdip30LzKASTjULgQekaNyE3p7FeVxHpGdLQFz1RJY="
-    # BINTRAY_REPO_OWNER
-    - secure: "F8fL96BazSEdnRt34xRaB0gGXcjJrsWCUNMd2oOwsimojg7GFBNslgkfvHFqshdqgjdUbNQb6m3Wmn7ctu4/CIHr/m2JPpm/EloOGua3iaKkeJ4qAjQkkGHKE9fX/IxKNnLuZjKCrAJPmCstalkulOLTTEd2/TT073hda2xcjj5u13oke7RKca93kzLYUdLOpUQT3rLWbmOBPGoN5UE05sQMosMi44w6oM68cyrxACWM58iz8XqPknHKVzNmKzmrclddnlnkq7nGw82u4V6qqzUUjio3vALFSwj+fF9U+KkWG+KJkSKxmGETd5nqXRIE691HoUQ/gs6N/AzXRW1H3IAAIbhqZmxX/bPY7tTDw5tqynnsRB4Jx7QwQEHepxjOlRHLhwMy5pNYI+2n7WotcqS0ChKh0LaSGPhv1Qmq91QQ81Fl4l6QjQUji+NFgCWtr50Mun3jVpJjcXs6ZsxN8jTbt1FqrDGcyq2DtTUr6dYO5vFrvTpRxCJueIS0aUijQC1aNxjqE7Zbh5VUYg1kGc/dB6sTp1juyZaLZUdHXAprYZEVhmpKL1UgCcigW/GMx7bTaCbuNigbxISihfzCWtOS1UdkQi62574yxUdMLABX5xNzZuDyDgNVXNrfEC+BzeKmd9Cz2FBy7yPUrX9GzZ8pmP0GUSHypvRvoi22Hzs="
+    # FTP_USER
+    - secure: "gZgL03s5mEXlxt5V2jgoxspGzTIyEWPnx7lrkYdRdgQvPDWjQeBvbGzPTQtSmOCDhztuk9Ly/xt8XM8koJJEBx2mvONtoHeQrTcyXxKQy1NrjMc52Ft4Kq6+NBO9yLCfd8/KLHKdKIUx/UYBh2T8QZ/eRRZ2jdFYiMdjXyZEqY4VvRI62FJCKozEXbKVSbfzSEX4Kcz/wN4hth5lc/z418iVjFtr1gMYtJkE58ad3jDXvMhs9KvZi9ShFQjc70Z+2uMF9b4VG6hElarOLOFW1uqQDhQ5lvGMRxmffIDwsBEc8D/au6Rf5hxBQ4BKK5rC+4M//nyklHbxNPn4qomkAFYI9WWEFAIwlnHLkgFlwR9mpsfbUy9866EIzVJudqGTpkSenMNanZLUqu4ahbi+2DM5g3vtI6oydhcgY82kh96WYxE16il7h0sc+VCW83t68/txQgnNxx5CF/Zvai+tVQtwDcea73Jdg7MsY3rLd0zNJHbtUcgB16em8r+mGSZnlxw/M8qYIMN+J0f/0da2btOzApaWKM8Yd5v6d0aVe2A1mDfWS5CAglZsZp+siXkSb7iJklQ/ZJull1gO2yn7u0iVKMRo1dYcUCOv6BxoNlQ+rBjsmDd3Jlxb/L69Q+Utom0H3JsZmxi9pLxZs2HyZxaeKuvMN8zL3bkgT7SBzM8="
+    # FTP_PASSWORD
+    - secure: "L+mFXsLhh3O5up+VDQVCmrjPmAG2EnYLQbdQfmfmBZTat22torjYQruV382ulRYShjQ0NDWqjwDWLUZgWneKDo7pWNLO64WVzJ/FU87I/pld7tHj5Z1u7C7cOqGOCnXtsjW0MGqyD0d+uZIBYCyBFb35W56ugH1QZ1b0dK+gxtHK/CVG7Sq/t2noBz+vRy3tqbTiPPE9SUCPFfvTDVpRqlLr6G16Amw7MpbWZjhpFrJyTv4FaORUYjoVq8g2UJ1hDWW3C/9zBiK+tBeDJCJYF+gdyWSBe++CFiF+ad6h9H4fm4v8hq4b3q208XZ7sBU4XS+X81geysp4VjtPENsf26R2dVc96KlqTP2uDU9lKHiWZ2cplKo4tR+zmGglLpsgGQTy+njQ3JKvjptHlmUslbdYZmDXCankVcgkgC5S1qvjABHgKlb1zif+DUGN3do2SkCz4Lm6t7JF0qN70WPLrlUIxrQp5hjVUL5nfH954c6ialkpLFatUrNKk9b6sdzihMkOqcvPvCRzlQ3gdX7OLSKevMWrEbYp0H2fhKelBi8oBgXsbQkVRbVnFLuda9LH3JC7skaZOGPgqk/i8z62RNWntA2symYk/wyanyVpcVfsOqMdbcIiJv26RhJiyUYbXi9lzoon/PFDbCBdem8N0ZlEIkS+X95aXWDsC0PWlG0="
+    # FTP_URL
+    - secure: "o2c4GoqhvsAINUDs5i0/tWJzIMKLP3cX2Im/YWjVZIoo/tZ3ijuYIFfxTsborkxonkDTf19Nfg4W0nOcY6GWAbx9zO2xIG14hniDDCYnM3YCv83LFDy6Pz+gAbGt2kjOsyHUxOMrspIn0rZv/SGlNwizpRnl9pjRcALCsyR+okn9mvHT4YxOE8fl0YvwG+Pf56Q3ocJzM+J5m0LxpwQXHXayDNJ8tDPWi/S5FJcw0+mh9eFfeNZGEqiYNulkmS0/LcpLz7n9rII32/EJ4QzVV9Jn2/exHlfINaDv3BfDOWZ+UmokFJGA+VtBwDw4WP2Fkzqadg3wyj01GlRPbKm36/OEUc6wSKctOraEsOoF32zc1zQZl+Y2Z0ekjrSfzcRxc3s1LYFO3I285yr4BVolmRZJVO1LU/nZmJYJJzat3JmagBsDnzGVcmTQUDoHB/SUNC0aRGGX6FrjhzPKhNdXUCe4HZE9jSRQHyEBEnNYV3524OJiuda5dinI1pqOVR5mqZCOzkChbmG9MAk1au4SKeC5oRLw4cae9DIIdfG1GzAysCNXtRa6Hc4+QyBVft8E7rNheDtRmn9/t9UGVj/aQIQtjmDjlcErCGDowfY4ZgIAPQ+2YWxw/16NXfWCZ9mIdHbj/LWKl7IT7BxqAAXyOlakhvhQNkmp3Cw33Qkf0Vk="
 
 arch:
-  repos:
-    - fluid=https://dl.bintray.com/liri/archlinux-develop/$arch/
-    - libliri=https://dl.bintray.com/liri/archlinux-develop/$arch/
+  artifacts:
+    - libliri-artifacts.tar.gz
+    - fluid-artifacts.tar.gz
   packages:
     - qbs
     - qt5-tools
@@ -29,32 +32,17 @@ arch:
     - modemmanager-qt
     - pulseaudio
     - libqtxdg
-    - fluid-git
-    - libliri-git
     - xorg-server-xvfb
-    - clang
     #- clazy-git
   script:
     #- export CLAZY_CHECKS="level1"
     - qbs-setup-toolchains --detect
     - qbs-setup-qt /usr/bin/qmake-qt5 qt5
     - qbs config profiles.qt5.baseProfile ${CC}
-    - eval `dbus-launch --sh-syntax` && xvfb-run -a -s "-screen 0 800x600x24" qbs -d qbs-build -j $(nproc) profile:qt5
-    - ./.travis/bintray-wrapper.sh
+    - eval `dbus-launch --sh-syntax` && xvfb-run -a -s "-screen 0 800x600x24" qbs build -d qbs-build -j $(nproc) profile:qt5
 
 script:
-  - "curl -s https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh | bash"
-
-deploy:
-  provider: bintray
-  on:
-    branch: develop
-    condition: "$CC = gcc"
-  file: cibuild/bintray.json
-  user:
-    secure: "Hoq9tF+DPR/UYgKmVstrn/LaBycL8cI+AKk+8Vsw1FjoNddW/dTNJ5GmHBVPi3VdTO3cgjqk/5T0CxFO6aMD6noBlDPdIUNJb92cuFjqqn9RcQ3+1HibMqjHhUTLnXeTEN3vXj01JTd9GAS+cETh+YUwVyN4VoDrDe2VcYSopC8S2G1mi3wtnxxiOq1+hzO7Hua+Gy/qbAm5MgTdl2glrSbAdk5nI/900nrH3KJMYe7Ofs0zUB/f+eGlT52muYeyMnVZdBW6ukXN0HRPrGHXeLagDWC0fxdpsbfkvqQ2Kzrf3cr9yL4K7hVEQ/pP2e18ujX2Y9hoz1ZyAUC3TOqwVCwAJGGjuRUtGDO4wpClO8irExWDQsC4gqAPvoSPyD6nXxa8LeyVhEbNE7HqZsUPspBRUXf9Eam74DhRaYVTWrBV4Aasd7nP+6fwyU2cvsNmAEMprOhwaGS33d1A9BujQzYoYSPvur5DsK/1iPpvIx1yTItR3tg+JYEmTWm6P2tl88sETTU3WuG4gv5qBzFWzcjjfBD7Nw5bYk8mpAYMYb8wAs2Me9ZXTkRcFzU3i1vcZh9kaOHm5OkV6WAhB+97YNOv9B7AKSgoh9iukzjuSGvaY5IcXQgRzVrahKZ+yUVYh3RlmpCdve2FoQwSGUhEsQ+ioQHsPgV8nkTnEOfS+N0="
-  key:
-    secure: "H5pp2Sckx6XjSHUELeOTJjCZ1IrMf1yCKWzXRTn05xYbimkGachqbWqO9dMlganmZoP8m41xpwoRDDB3DV3hdMptwxxCS65zg4I7y9/VxZ+5PmU5R1PPQcR18bMBjfXMR5slKjc/ueg3TVuQCYCVD4K8VPbGeP+g636hUomtFp0SEjomZZMePFYAuZA/V8U6XeHJR4C/BLo+8gy7uFFgQZ2HFBl5X8S9pymKCuSQ8M0HpJkbpvy6Ma5GwTg79HC3ODXJ0xdFqaNQStrt8kFcNvsXCaYMBHwHgaEU3y6FZb490lDvHYyABrUn3m2Krn3E36dDRzvyLJNZX4JeGUo5EUpIvNFO+wq70ExqGTz6B/IL3Z3vPNRzF9JaZLkLeSfI3cpOfJEpuBpyNxgVAHBhtcL9QFl2KJu5e7ot9dES9sxZso5LTrOtlqxltnLVJohL46Q1MVcoDDv6Pm8Z6QPcls4lrVR8s+qWrVdUF6lwJZ0T5N/fosINfFoDTZntsMn6EvNsOAo1XPrQ0NKbEFrIdrYqs1wDCb4ndn9ItNFsT0H+Hy+0EgyHW/GKvIJBxZSRKt4bZc2uXXqpRA4/2t/3fezfqEQAq+OAqgjmBH+2+n2x81moRqudTGBA+L62CtZH2utiVGJQS/xaIWHX48UWEQG2B9MRUFrFWgin0HnHGaU="
+  - "curl -s https://raw.githubusercontent.com/lirios/repotools/develop/travis/docker-travis.sh | bash"
 
 notifications:
   email: false

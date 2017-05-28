@@ -5,14 +5,15 @@ LiriDynamicLibrary {
     targetName: "nmplugin"
 
     Depends { name: "lirideployment" }
-    Depends { name: "Qt"; submodules: ["dbus", "qml", "quick"] }
+    Depends { name: "Qt"; submodules: ["core", "dbus", "qml", "quick"] }
     Depends { name: "KF5"; submodules: ["NetworkManagerQt", "ModemManagerQt"] }
 
     cpp.defines: [
         'VIBE_VERSION="' + project.version + '"',
-        "QT_NO_KEYWORDS",
         "WITH_MODEMMANAGER_SUPPORT"
     ]
+
+    Qt.core.enableKeywords: false
 
     files: ["*.cpp", "*.h"]
 

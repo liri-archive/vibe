@@ -106,4 +106,5 @@ to learn how to enable them.
 
 ## Licensing
 
-Licensed under the GNU Lesser General Public License version 3.0 terms.
+Licensed under the terms of the GNU Lesser General Public License version 3 or,
+at your option, any later version.

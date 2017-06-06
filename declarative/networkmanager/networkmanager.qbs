@@ -1,11 +1,10 @@
 import qbs 1.0
 
-LiriDynamicLibrary {
-    name: "Vibe.NetworkManager"
-    targetName: "nmplugin"
+LiriQmlPlugin {
+    name: "nmplugin"
+    pluginPath: "Vibe/NetworkManager"
 
-    Depends { name: "lirideployment" }
-    Depends { name: "Qt"; submodules: ["core", "dbus", "qml", "quick"] }
+    Depends { name: "Qt"; submodules: ["dbus"] }
     Depends { name: "KF5"; submodules: ["NetworkManagerQt", "ModemManagerQt"] }
 
     cpp.defines: [
@@ -15,20 +14,5 @@ LiriDynamicLibrary {
 
     Qt.core.enableKeywords: false
 
-    files: ["*.cpp", "*.h"]
-
-    Group {
-        name: "QML Files"
-        files: [
-            "qmldir",
-            "plugins.qmltypes"
-        ]
-        fileTags: ["qml"]
-    }
-
-    Group {
-        qbs.install: true
-        qbs.installDir: lirideployment.qmlDir + "/Vibe/NetworkManager"
-        fileTagsFilter: ["dynamiclibrary", "qml"]
-    }
+    files: ["*.cpp", "*.h", "qmldir", "plugins.qmltypes"]
 }

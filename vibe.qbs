@@ -9,8 +9,6 @@ Project {
 
     minimumQbsVersion: "1.8.0"
 
-    qbsSearchPaths: ["qbs/shared"]
-
     references: [
         "declarative/hardware/hardware.qbs",
         "declarative/mpris2/mpris2.qbs",

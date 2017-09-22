@@ -15,6 +15,8 @@ Project {
         "declarative/networkmanager/networkmanager.qbs",
         "declarative/policykit/policykit.qbs",
         "declarative/pulseaudio/pulseaudio.qbs",
-        "declarative/wallet/wallet.qbs",
+
+        // Vibe.KWallet no longer supported, see #17
+        //"declarative/wallet/wallet.qbs",
     ]
 }

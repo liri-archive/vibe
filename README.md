@@ -15,7 +15,6 @@ A collection of core classes used throughout Liri.
 
 This library includes:
 
- * A QML wrapper around KWallet
  * A QML plugin to access storage devices and batteries
  * A QML plugin for freedesktop.org notification servers
  * A QML plugin for MPRIS2 clients
@@ -33,7 +32,6 @@ The following modules and their dependencies are required:
  * [qbs-shared](https://github.com/lirios/qbs-shared.git)
  * [fluid](https://github.com/lirios/fluid.git)
  * [libliri](https://github.com/lirios/libliri.git)
- * [kwallet](http://quickgit.kde.org/?p=kwallet.git)
  * [solid](http://quickgit.kde.org/?p=solid.git)
  * [networkmanager-qt](http://quickgit.kde.org/?p=networkmanager-qt.git)
  * [modemmanager-qt](http://quickgit.kde.org/?p=modemmanager-qt.git)

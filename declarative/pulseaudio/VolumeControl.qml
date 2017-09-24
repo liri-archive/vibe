@@ -22,10 +22,10 @@
  ***************************************************************************/
 
 import QtQuick 2.0
-import Fluid.Core 1.0
+import Fluid.Core 1.0 as FluidCore
 import Vibe.PulseAudio 1.0
 
-Object {
+FluidCore.Object {
     readonly property real from: 0
     readonly property real to: 100
     readonly property real stepPercentage: 5

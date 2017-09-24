@@ -26,11 +26,7 @@
 
 #include "battery.h"
 
-#include <Fluid/DateUtils>
-
 Q_LOGGING_CATEGORY(BATTERY, "vibe.hardware.battery")
-
-using namespace Fluid;
 
 Battery::Battery(const QString &udi, QObject *parent)
     : QObject(parent)

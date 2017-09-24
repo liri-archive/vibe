@@ -74,6 +74,10 @@ for more deployment-related parameters.
 If you specify `qbs.installRoot` you might need to prefix the entire line with `sudo`,
 depending on whether you have permissions to write there or not.
 
+You can also specify the following options:
+
+ * `projects.Vibe.useStaticAnalyzer:true` to enable the Clang static analyzer
+
 ## Notes
 
 ### Logging categories

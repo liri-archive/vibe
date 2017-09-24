@@ -715,7 +715,6 @@ void NetworkModel::availableConnectionDisappeared(const QString& connection)
                 updateItem(item);
             }
         }
-        available = false;
     }
 }
 

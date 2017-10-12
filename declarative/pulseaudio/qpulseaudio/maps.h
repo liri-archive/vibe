@@ -73,12 +73,12 @@ public:
 
     const QMap<quint32, Type *> &data() const { return m_data; }
 
-    int count() const Q_DECL_OVERRIDE
+    int count() const override
     {
         return m_data.count();
     }
 
-    int indexOfObject(QObject *object) const Q_DECL_OVERRIDE
+    int indexOfObject(QObject *object) const override
     {
         int index = 0;
         QMapIterator<quint32, Type *> it(m_data);
@@ -92,7 +92,7 @@ public:
         return -1;
     }
 
-    QObject *objectAt(int index) const Q_DECL_OVERRIDE
+    QObject *objectAt(int index) const override
     {
         return (m_data.constBegin() + index).value();
     }

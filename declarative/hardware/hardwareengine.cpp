@@ -50,7 +50,7 @@ HardwareEngine::HardwareEngine(QObject *parent) : QObject(parent)
         }
     });
     connect(notifier, &Solid::DeviceNotifier::deviceRemoved, [this](const QString &udi) {
-        Battery *battery = m_batteries.value(udi, Q_NULLPTR);
+        Battery *battery = m_batteries.value(udi, nullptr);
         if (battery) {
             m_batteries.remove(udi);
             Q_EMIT batteriesChanged();
@@ -59,7 +59,7 @@ HardwareEngine::HardwareEngine(QObject *parent) : QObject(parent)
             return;
         }
 
-        StorageDevice *storageDevice = m_storageDevices.value(udi, Q_NULLPTR);
+        StorageDevice *storageDevice = m_storageDevices.value(udi, nullptr);
         if (storageDevice) {
             m_storageDevices.remove(udi);
             Q_EMIT storageDevicesChanged();

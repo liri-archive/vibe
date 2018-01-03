@@ -31,7 +31,7 @@ FluidCore.Object {
     readonly property real stepPercentage: 5
     readonly property real stepSize: Math.round(stepPercentage * PulseAudio.NormalVolume / 100.0)
     readonly property bool visible: sinkModel.defaultSink !== null
-    readonly property bool muted: sinkModel.defaultSink.muted || sinkModel.defaultSink.volume === PulseAudio.MinimalVolume
+    readonly property bool muted: visible ? sinkModel.defaultSink.muted || sinkModel.defaultSink.volume === PulseAudio.MinimalVolume : false
 
     signal volumeChanged(real volume)
 

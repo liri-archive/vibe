@@ -52,7 +52,7 @@ FluidCore.Object {
     }
 
     function getIconName() {
-        if (sinkModel.defaultSink.muted || sinkModel.defaultSink.volume === PulseAudio.MinimalVolume)
+        if (!sinkModel.defaultSink || sinkModel.defaultSink.muted || sinkModel.defaultSink.volume === PulseAudio.MinimalVolume)
             return "av/volume_off"
 
         var volume = getVolumePercentage()

@@ -6,6 +6,15 @@ LiriQmlPlugin {
 
     Depends { name: "PulseAudio" }
 
+    condition: {
+        if (!PulseAudio.found) {
+            console.error("PulseAudio is required to build " + targetName);
+            return false;
+        }
+
+        return true;
+    }
+
     cpp.defines: ['VIBE_VERSION="' + project.version + '"']
     cpp.includePaths: base.concat(["qpulseaudio"])
 

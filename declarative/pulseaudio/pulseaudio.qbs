@@ -7,10 +7,8 @@ LiriQmlPlugin {
     Depends { name: "PulseAudio" }
 
     condition: {
-        if (!PulseAudio.found) {
-            console.error("PulseAudio is required to build " + targetName);
-            return false;
-        }
+        if (!PulseAudio.found)
+            throw "PulseAudio is required to build " + targetName;
 
         return true;
     }

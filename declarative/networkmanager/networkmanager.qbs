@@ -8,15 +8,11 @@ LiriQmlPlugin {
     Depends { name: "KF5"; submodules: ["NetworkManagerQt", "ModemManagerQt"] }
 
     condition: {
-        if (!KF5.NetworkManagerQt.found) {
-            console.error("KF5 NetworkManagerQt is required to build " + targetName);
-            return false;
-        }
+        if (!KF5.NetworkManagerQt.found)
+            throw "KF5 NetworkManagerQt is required to build " + targetName;
 
-        if (!KF5.ModemManagerQt.found) {
-            console.error("KF5 ModemManagerQt is required to build " + targetName);
-            return false;
-        }
+        if (!KF5.ModemManagerQt.found)
+            throw "KF5 ModemManagerQt is required to build " + targetName;
 
         return true;
     }

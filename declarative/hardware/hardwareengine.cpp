@@ -94,7 +94,7 @@ HardwareEngine::~HardwareEngine()
 
 Battery *HardwareEngine::primaryBattery() const
 {
-    Q_FOREACH (Battery *battery, m_batteries) {
+    for (Battery *battery : qAsConst(m_batteries)) {
         if (battery->type() == Battery::PrimaryBattery)
             return battery;
     }

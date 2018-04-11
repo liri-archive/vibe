@@ -11,7 +11,10 @@ sudo apt-get install -y \
      libpolkit-qt5-1-dev \
      libkf5wallet-dev \
      libkf5solid-dev \
+     libnm-glib-dev \
      libkf5networkmanagerqt-dev \
+     libmm-glib-dev \
+     modemmanager-dev \
      modemmanager-qt-dev \
      libpulse-dev
 travis_end "install_packages"

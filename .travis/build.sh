@@ -13,7 +13,7 @@ sudo apt-get install -y \
      libkf5solid-dev \
      libkf5networkmanagerqt-dev \
      modemmanager-qt-dev \
-     libpusle-dev
+     libpulse-dev
 travis_end "install_packages"
 
 # Install libqtxdg

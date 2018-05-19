@@ -13,7 +13,6 @@ Project {
 
     references: [
         "declarative/hardware/hardware.qbs",
-        "declarative/networkmanager/networkmanager.qbs",
         "declarative/pulseaudio/pulseaudio.qbs",
 
         // Vibe.KWallet no longer supported, see #17

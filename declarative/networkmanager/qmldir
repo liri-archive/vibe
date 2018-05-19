@@ -1,4 +1,0 @@
-module Vibe.NetworkManager
-plugin nmplugin
-classname NetworkManagerPlugin
-typeinfo plugins.qmltypes

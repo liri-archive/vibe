@@ -16,9 +16,6 @@ A collection of core classes used throughout Liri.
 This library includes:
 
  * A QML plugin to access storage devices and batteries
- * A QML plugin for freedesktop.org notification servers
- * A QML plugin for MPRIS2 clients
- * A QML plugin for PolicyKit agents.
 
 ## Dependencies
 
@@ -31,13 +28,8 @@ The following modules and their dependencies are required:
 
  * [qbs](http://code.qt.io/cgit/qbs/qbs.git) >= 1.9.0
  * [qbs-shared](https://github.com/lirios/qbs-shared.git) >= 1.2.0
- * [fluid](https://github.com/lirios/fluid.git) >= 1.0.0
  * [libliri](https://github.com/lirios/libliri.git)
  * [solid](http://quickgit.kde.org/?p=solid.git)
- * [networkmanager-qt](http://quickgit.kde.org/?p=networkmanager-qt.git)
- * [modemmanager-qt](http://quickgit.kde.org/?p=modemmanager-qt.git)
- * [polkit-qt5](http://quickgit.kde.org/?p=polkit-qt-1.git)
- * [pulseaudio](https://cgit.freedesktop.org/pulseaudio/pulseaudio/) >= 5.0.0
 
 ## Installation
 
